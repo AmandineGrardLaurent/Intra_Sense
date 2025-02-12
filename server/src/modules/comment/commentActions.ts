@@ -4,7 +4,6 @@ import commentRepository from "./commentRepository";
 
 const add: RequestHandler = async (req, res, next) => {
   try {
-    // console.log(req.body);
     const newComment = {
       content: req.body.content,
       user_id: req.body.user_id,

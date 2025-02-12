@@ -26,17 +26,18 @@ export const verifyToken: RequestHandler = async (req, res, next) => {
     const token = req.cookies.auth_token;
 
     if (!token) {
-      res.status(403).json({ authentified: false });
+      res.status(403).json({ authentified: false, message: "token manquant" });
     }
 
     const verifiedToken = jwt.verify(
       req.cookies.auth_token,
       process.env.APP_SECRET as string,
     );
+
     if (verifiedToken) {
-      next();
+      res.json({ authentified: true, message: "tu es connecté" });
     } else {
-      res.json({ authentified: false });
+      res.json({ authentified: false, message: "token invalide" });
       return;
     }
   } catch (err) {
