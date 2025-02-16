@@ -70,6 +70,7 @@ class UserRepository {
     const result = user as UserType[];
     return result.length > 0 ? result[0] : null;
   }
+
   async readByEmailForComment(
     email: string,
   ): Promise<{ user_id: number } | null> {
