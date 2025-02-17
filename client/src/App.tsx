@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
-// import { useState } from "react";
 import { Bounce, ToastContainer } from "react-toastify";
 
 function App() {
