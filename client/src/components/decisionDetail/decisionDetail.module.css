@@ -1,5 +1,4 @@
 .container {
-  margin: 2em 5.5em;
   display: flex;
   gap: 1.75em;
   flex-direction: column;
@@ -27,11 +26,12 @@
 }
 
 .titleH2 {
-  margin-bottom: 0.7em;
+  margin-bottom: 0.4em;
   color: var(--color-tertiary-active);
-  text-decoration: underline;
   font-weight: normal;
   font-size: 2em;
+  width: 100%;
+  /* border-bottom: 2px solid var(--color-tertiary-active); */
 
   @media screen and (max-width: 768px) {
     font-size: 1em;

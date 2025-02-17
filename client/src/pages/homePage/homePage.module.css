@@ -2,23 +2,23 @@
   padding: 1em;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 /* bouton pour créer une prise de décision */
 
 .buttonCreateDecision {
-  width: 20%;
-  padding: 0.25em 0.25em;
+  width: 15rem;
+  padding: 0.25rem 0.25rem;
   background-color: var(--color-tertiary-active);
   border-radius: 1em;
   color: white;
-  margin-left: 70%;
   border-color: var(--color-tertiary-active);
-  font-size: 1em;
+  font-size: 1rem;
+  margin: auto auto;
 
   @media screen and (max-width: 768px) {
     width: 60%;
-    margin: auto auto;
     font-size: 0.8em;
   }
 }
@@ -43,8 +43,9 @@
 
 .titleH2 {
   color: var(--color-tertiary-active);
-  text-decoration: underline;
   font-weight: normal;
+  width: 100%;
+  border-bottom: 2px solid var(--color-tertiary-active);
 
   @media screen and (max-width: 768px) {
     font-size: 1em;
@@ -60,22 +61,5 @@
 
   @media screen and (max-width: 768px) {
     padding: 1em 0;
-  }
-}
-
-.errorMessage {
-  text-align: center;
-  color: #ef4444;
-  font-size: 1.25rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 8px;
-  max-width: 400px;
-  margin: 2rem auto;
-}
-
-@media screen and (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }

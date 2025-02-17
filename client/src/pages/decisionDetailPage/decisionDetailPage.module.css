@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.detailsComments {
+  margin: 2rem 1rem 2rem 5rem;
+}
+
+.users {
+  margin: 2rem 5rem 2rem 5rem;
+}

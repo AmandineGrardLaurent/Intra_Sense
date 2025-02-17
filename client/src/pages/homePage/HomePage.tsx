@@ -11,11 +11,12 @@ export default function HomePage() {
     <div>
       <NavBar />
       <main className={style.main}>
-        <NavLink to={"/decisionformpage"}>
-          <button type="button" className={style.buttonCreateDecision}>
+        <button type="button" className={style.buttonCreateDecision}>
+          <NavLink to={"/decisionformpage"}>
             Créer une prise de décision
-          </button>
-        </NavLink>
+          </NavLink>
+        </button>
+
         <section className={style.section}>
           <h2 className={style.titleH2}>Les décisions où je participe</h2>
           <div className={style.cardsContainer}>

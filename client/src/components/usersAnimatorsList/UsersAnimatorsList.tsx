@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import style from "./usersAnimatorsList.module.css";
 
 export default function UsersAnimatorsList({ id }: { id: string }) {
   const [animators, setAnimators] = useState<DataUserType[]>([]);
@@ -12,9 +13,9 @@ export default function UsersAnimatorsList({ id }: { id: string }) {
 
   return (
     <>
-      <h2>Les animateurs de la décision</h2>
       {animators.length > 0 && (
-        <section>
+        <section className={style.container}>
+          <h2 className={style.titleH2}>Les animateurs de la décision</h2>
           {animators.map((animator) => (
             <article key={animator.id}>
               <p>

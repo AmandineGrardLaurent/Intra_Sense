@@ -13,9 +13,9 @@ export default function UsersImpactedtList({ id }: { id: string }) {
 
   return (
     <>
-      <h2>Les personnes impactées de la décision</h2>
       {impacted.length > 0 && (
         <section>
+          <h2>Les personnes impactées de la décision</h2>
           {impacted.map((impacted) => (
             <article key={impacted.id}>
               <p>

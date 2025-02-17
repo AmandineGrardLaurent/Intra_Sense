@@ -13,9 +13,9 @@ export default function UsersExpertList({ id }: { id: string }) {
 
   return (
     <>
-      <h2>Les experts de la décision</h2>
       {experts.length > 0 && (
         <section>
+          <h2>Les experts de la décision</h2>
           {experts.map((expert) => (
             <article key={expert.id}>
               <p>

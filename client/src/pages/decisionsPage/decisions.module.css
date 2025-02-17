@@ -1,4 +1,4 @@
-main {
+.main {
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@ main {
   }
 }
 
-h2 {
+/* h2 {
   color: var(--color-tertiary-active);
   text-decoration: underline;
   font-weight: normal;
@@ -61,7 +61,7 @@ section {
   @media screen and (max-width: 768px) {
     padding: 1em 0;
   }
-}
+} */
 
 .errorMessage {
   text-align: center;

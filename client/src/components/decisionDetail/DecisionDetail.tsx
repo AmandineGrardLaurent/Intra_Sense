@@ -74,9 +74,6 @@ export default function DecisionDetail({ id }: { id: string }) {
             <p>{decision.risk}</p>
           </ShowMoreText>
         </article>
-        <article>
-          <h2 className={style.titleH2}>Les commentaires</h2>
-        </article>
       </section>
     )
   );
