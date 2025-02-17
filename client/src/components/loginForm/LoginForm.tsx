@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import style from "./loginForm.module.css";
 
@@ -12,6 +12,7 @@ export default function LoginForm() {
     formState: { errors },
   } = useForm<FieldValues>();
 
+  const Navigate = useNavigate();
   const onSubmit = async (data: FieldValues) => {
     try {
       const { email, hash_password } = data;
@@ -36,6 +37,9 @@ export default function LoginForm() {
       } else {
         toast.error(result.message || "Erreur lors de la connexion");
       }
+      setTimeout(() => {
+        Navigate("/");
+      }, 1500);
     } catch (error) {
       toast.error("Erreur de connexion. Vérifiez vos identifiants.");
     }
