@@ -12,7 +12,6 @@ export default function LoginForm() {
     formState: { errors },
   } = useForm<FieldValues>();
 
-  // const Navigate = useNavigate();
   const onSubmit = async (data: FieldValues) => {
     try {
       const { email, hash_password } = data;
@@ -27,7 +26,7 @@ export default function LoginForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        // credentials: "include",
+        credentials: "include",
         body: JSON.stringify(loginData),
       });
       const result = await response.json();
@@ -37,10 +36,6 @@ export default function LoginForm() {
       } else {
         toast.error(result.message || "Erreur lors de la connexion");
       }
-
-      // setTimeout(() => {
-      //   Navigate("/");
-      // }, 1500);
     } catch (error) {
       toast.error("Erreur de connexion. Vérifiez vos identifiants.");
     }

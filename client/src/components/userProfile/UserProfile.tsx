@@ -63,7 +63,7 @@ export default function UserProfile({ id }: { id: string }) {
           `${import.meta.env.VITE_API_URL}/api/user/${id}`,
           {
             method: "GET",
-            // credentials: "include",
+            credentials: "include",
           },
         );
 
@@ -99,7 +99,7 @@ export default function UserProfile({ id }: { id: string }) {
           headers: {
             "Content-Type": "application/json",
           },
-          // credentials: "include",
+          credentials: "include",
           body: JSON.stringify(updatedData),
         },
       );

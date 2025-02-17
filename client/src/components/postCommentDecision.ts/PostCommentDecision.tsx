@@ -15,7 +15,7 @@ export default function PostCommentDecision({ id }: { id: string }) {
           headers: {
             "Content-Type": "application/json",
           },
-          // credentials: "include",
+          credentials: "include",
           body: JSON.stringify(data),
         },
       );
