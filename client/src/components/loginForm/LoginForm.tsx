@@ -94,7 +94,7 @@ export default function LoginForm() {
           </label>
           <div className={style.containerButton}>
             <button type="submit" className={style.buttonLogin}>
-              Login
+              Se connecter
             </button>
           </div>
         </section>

@@ -63,6 +63,10 @@
   }
 }
 
+.buttonCreateUser:hover {
+  background-color: var(--color-primary-active);
+}
+
 .containerButton {
   display: flex;
   justify-content: center;

@@ -24,6 +24,10 @@
   }
 }
 
+.buttonCreateDecision:hover {
+  background-color: var(--color-primary-active);
+}
+
 .buttonScrollToTop {
   width: 15%;
   text-align: center;
@@ -38,6 +42,10 @@
     width: 40%;
     font-size: 0.8em;
   }
+}
+
+.buttonScrollToTop:hover {
+  background-color: #066a86;
 }
 
 .titleH2 {

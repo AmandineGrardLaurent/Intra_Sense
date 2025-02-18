@@ -90,7 +90,7 @@
 
 .buttonSignup:hover,
 .buttonLogin:hover {
-  background-color: #0e7490;
+  background-color: var(--color-primary-active);
 }
 
 .forgotPassword {
