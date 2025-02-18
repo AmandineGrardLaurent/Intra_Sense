@@ -1,11 +1,10 @@
 .container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
   background-color: aliceblue;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px -1px rgba(26, 26, 26, 0.1);
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
 }
 
 .card {
@@ -20,10 +19,12 @@
 }
 
 .title {
-  color: #9b084f;
+  color: var(--color-tertiary-active);
   font-size: 1.75rem;
   font-weight: 600;
   text-align: center;
+  padding: 0.5rem;
+  /* margin-bottom: 2rem; */
 }
 
 .profileHeader {
@@ -38,14 +39,31 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 2px solid #9b084f;
+  border: 2px solid var(--color-tertiary-active);
 }
 
-.profileDetails p {
-  font-size: 1rem;
-  color: #333;
-  margin: 5px 0;
-  text-align: left;
+.avatarContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.profilePicture {
+  border-radius: 50%;
+  width: 8rem;
+}
+
+.photoChange {
+  color: black;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 0.8em;
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    font-size: 0.8em;
+  }
 }
 
 .form {
@@ -58,9 +76,11 @@
 }
 
 .label {
+  display: block;
+  color: #0891b2;
+  margin-bottom: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #333;
 }
 
 .input {
@@ -102,19 +122,6 @@
   font-size: 1rem;
 }
 
-.passwordSection {
-  display: flex;
-  flex-direction: column;
-}
-
-.passwordField {
-  margin-bottom: 1rem;
-}
-
-.passwordField input {
-  margin-bottom: 0.5rem;
-}
-
 .buttonContainer {
   display: flex;
   justify-content: center;
@@ -122,35 +129,46 @@
   margin-top: 2rem;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #9b084f;
+.saveButton {
+  padding: 10px 15px;
+  background-color: var(--color-tertiary-active);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 1rem;
   font-size: 1rem;
   cursor: pointer;
 }
 
-button:hover {
+.saveButton:hover {
   background-color: #7a073e;
 }
 
 .backButton {
-  background-color: #0891b2;
+  background-color: var(--color-primary-active);
   color: white;
-  padding: 10px 20px;
+  padding: 5px 15px;
   border: none;
-  border-radius: 8px;
+  border-radius: 1rem;
   font-size: 1rem;
   cursor: pointer;
 }
 
 .backButton:hover {
-  background-color: #067a99;
+  background-color: #066a86;
+}
+
+.information {
+  color: var(--color-tertiary-active);
+  font-weight: 500;
 }
 
 @media screen and (max-width: 768px) {
+  .avatarContainer {
+    align-items: center;
+  }
+  .profileHeader {
+    flex-direction: column;
+  }
   .card {
     max-width: 90%;
     padding: 2rem;
