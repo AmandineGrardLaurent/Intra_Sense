@@ -73,7 +73,7 @@ const router = createBrowserRouter([
         element: <ErrorPage />,
       },
       {
-        path: "/login",
+        path: "/",
         element: <LoginPage />,
       },
       {
