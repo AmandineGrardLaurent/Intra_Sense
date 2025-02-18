@@ -27,29 +27,29 @@ function NavBar() {
             <ul className={style.dropdownMenu}>
               <li>
                 <NavLink
-                  to={"/participatingdecision"}
+                  to={"/participatingdecisions"}
                   className={style.navLink}
                 >
                   Les décisions où je participe
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/mydecision"} className={style.navLink}>
+                <NavLink to={"/mydecisions"} className={style.navLink}>
                   Mes décisions
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/runningdecision"} className={style.navLink}>
+                <NavLink to={"/runningdecisions"} className={style.navLink}>
                   Les décisions en cours
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/archiveddecision"} className={style.navLink}>
+                <NavLink to={"/archiveddecisions"} className={style.navLink}>
                   Les décisions archivées
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/alldecision"} className={style.navLink}>
+                <NavLink to={"/alldecisions"} className={style.navLink}>
                   Toutes les décisions
                 </NavLink>
               </li>
