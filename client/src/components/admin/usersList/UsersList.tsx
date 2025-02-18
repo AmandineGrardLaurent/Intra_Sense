@@ -19,14 +19,17 @@ export default function UsersList({ user }: { user: UserListType }) {
   return (
     <section className={style.container}>
       <article key={user.id} className={style.userCard}>
-        <div>
+        <img src={user.avatar} alt={user.lastname} className={style.avatar} />
+        <div className={style.name}>
           {user.firstname} {user.lastname}
         </div>
         <div>
           Inscrit le {new Date(user.created_at).toLocaleDateString("fr")}
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <button type="submit">Supprimer</button>
+          <button type="submit" className={style.buttonRefused}>
+            Supprimer
+          </button>
         </form>
       </article>
     </section>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import ApplicantsList from "../../../components/admin/applicantsList/ApplicantsList";
 import UsersList from "../../../components/admin/usersList/UsersList";
+import NavBar from "../../../components/navBar/NavBar";
+import style from "./usersList.module.css";
 
 export default function UsersListPage() {
   const [users, setUsers] = useState<UserListType[]>([]);
@@ -20,21 +22,26 @@ export default function UsersListPage() {
   }, []);
 
   return (
-    <>
-      <h1>Administration des utilisateurs</h1>
+    <div className={style.main}>
+      <NavBar />
+      <h1 className={style.titleH1}>Administration des utilisateurs</h1>
 
       <section>
-        <h2>Liste des postulants</h2>
-        {applicants.map((applicant) => (
-          <ApplicantsList user={applicant} key={applicant.id} />
-        ))}
+        <h2 className={style.titleApplicants}>Liste des postulants</h2>
+        <article className={style.userContainer}>
+          {applicants.map((applicant) => (
+            <ApplicantsList user={applicant} key={applicant.id} />
+          ))}
+        </article>
       </section>
       <section>
-        <h2>Liste des utilisateurs</h2>
-        {users.map((user) => (
-          <UsersList user={user} key={user.id} />
-        ))}
+        <h2 className={style.titleUsers}>Liste des utilisateurs</h2>
+        <article className={style.userContainer}>
+          {users.map((user) => (
+            <UsersList user={user} key={user.id} />
+          ))}
+        </article>
       </section>
-    </>
+    </div>
   );
 }

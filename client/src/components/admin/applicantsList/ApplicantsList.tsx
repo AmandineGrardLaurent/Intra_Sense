@@ -32,19 +32,25 @@ export default function ApplicantsList({ user }: { user: UserListType }) {
   return (
     <section className={style.container}>
       <article key={user.id} className={style.userCard}>
-        <div>
+        <img src={user.avatar} alt={user.lastname} className={style.avatar} />
+        <div className={style.name}>
           {user.firstname} {user.lastname}
         </div>
         <div>
           Inscrit le {new Date(user.created_at).toLocaleDateString("fr")}
         </div>
-
-        <form onSubmit={handleSubmit(onAccept)}>
-          <button type="submit">Accepter</button>
-        </form>
-        <form onSubmit={handleSubmit(onRefused)}>
-          <button type="submit">Rejeter</button>
-        </form>
+        <div className={style.buttonGroup}>
+          <form onSubmit={handleSubmit(onAccept)}>
+            <button type="submit" className={style.buttonAccepted}>
+              Accepter
+            </button>
+          </form>
+          <form onSubmit={handleSubmit(onRefused)}>
+            <button type="submit" className={style.buttonRefused}>
+              Rejeter
+            </button>
+          </form>
+        </div>
       </article>
     </section>
   );
