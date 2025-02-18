@@ -1,12 +1,29 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import style from "./NavBar.module.css";
 
 function NavBar() {
+  const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen((currentState) => !currentState);
+  };
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/logout`, {
+        method: "POST",
+        credentials: "include",
+      });
+      if (response.ok) {
+        navigate("/");
+      } else {
+        console.error("Erreur lors de la déconnexion");
+      }
+    } catch (error) {
+      console.error("Erreur lors de la requiête de déconnexion:", error);
+    }
   };
 
   return (
@@ -69,6 +86,11 @@ function NavBar() {
               className={style.profileImage}
             />
           </NavLink>
+        </li>
+        <li>
+          <button type="button" onClick={handleLogout}>
+            <span>Déconnexion</span>
+          </button>
         </li>
       </ul>
     </nav>
