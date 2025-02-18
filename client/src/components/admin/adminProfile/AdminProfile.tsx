@@ -216,7 +216,9 @@ export default function AdminProfile() {
           </footer>
         </form>
         <NavLink to="/admin/userslist">
-          <button type="button">Les utilisateurs</button>
+          <button type="button" className={styles.usersButton}>
+            Modérer les utilisateurs
+          </button>
         </NavLink>
       </section>
     </main>
