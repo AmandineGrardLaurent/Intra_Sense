@@ -50,13 +50,13 @@
 }
 
 .buttonCreateUser {
-  width: 60%;
-  padding: 0.25em 0.25em;
   background-color: var(--color-tertiary-active);
-  border-radius: 1em;
   color: white;
-  border-color: var(--color-tertiary-active);
-  font-size: 1em;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
   @media screen and (max-width: 768px) {
     width: 60%;
     font-size: 0.8em;

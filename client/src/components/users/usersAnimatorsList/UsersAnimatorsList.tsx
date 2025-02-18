@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import style from "../usersAnimatorsList.module.css";
+import style from "../users.module.css";
 
 export default function UsersAnimatorsList({ id }: { id: string }) {
   const [animators, setAnimators] = useState<DataUserType[]>([]);

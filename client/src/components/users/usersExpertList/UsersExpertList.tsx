@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import style from "../usersAnimatorsList.module.css";
+import style from "../users.module.css";
 
 export default function UsersExpertList({ id }: { id: string }) {
   const [experts, setExperts] = useState<DataUserType[]>([]);
