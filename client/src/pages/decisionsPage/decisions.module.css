@@ -5,36 +5,34 @@
   align-items: center;
 }
 
-/* bouton pour créer une prise de décision */
+.buttonContainer {
+  margin-left: 70%;
+}
 
 .buttonCreateDecision {
-  width: 20%;
-  padding: 0.25em 0.25em;
+  width: 15rem;
+  padding: 0.25rem 0.25rem;
   background-color: var(--color-tertiary-active);
   border-radius: 1em;
   color: white;
-  margin-left: 70%;
-  border-color: var(--color-tertiary-active);
-  font-size: 1em;
+  border: 0;
+  font-size: 1rem;
 
   @media screen and (max-width: 768px) {
     width: 60%;
-    margin: auto auto;
     font-size: 0.8em;
   }
 }
 
-/* bouton pour scroll en haut de la page */
-
 .buttonScrollToTop {
   width: 15%;
+  text-align: center;
   background-color: var(--color-primary-active);
   border-radius: 1em;
-  border-color: var(--color-primary-active);
   color: white;
   font-size: 1em;
   padding: 0.25em 0.25em;
-  margin: 1em auto;
+  margin: auto auto;
 
   @media screen and (max-width: 768px) {
     width: 40%;

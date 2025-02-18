@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { Element, Link } from "react-scroll";
 import CommentsList from "../../components/commentsList/CommentsList";
 import DecisionDetail from "../../components/decisionDetail/DecisionDetail";
 import NavBar from "../../components/navBar/NavBar";
@@ -18,17 +19,29 @@ export default function DecisionDetailPage() {
   return (
     <>
       <NavBar />
-      <main className={style.container}>
-        <section className={style.detailsComments}>
-          <DecisionDetail id={id} />
-          <CommentsList id={id} />
-          <PostCommentDecision id={id} />
+      <main className={style.page}>
+        <section className={style.container}>
+          <Element name="top">
+            <section className={style.detailsComments}>
+              <DecisionDetail id={id} />
+              <CommentsList id={id} />
+              <PostCommentDecision id={id} />
+            </section>
+          </Element>
+          <section className={style.users}>
+            <UsersAnimatorsList id={id} />
+            <UsersExpertList id={id} />
+            <UsersImpactedtList id={id} />
+          </section>
         </section>
-        <section className={style.users}>
-          <UsersAnimatorsList id={id} />
-          <UsersExpertList id={id} />
-          <UsersImpactedtList id={id} />
-        </section>
+        <Link
+          to="top"
+          smooth={true}
+          duration={500}
+          className={style.buttonScrollToTop}
+        >
+          Revenir en haut
+        </Link>
       </main>
     </>
   );

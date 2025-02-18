@@ -5,7 +5,9 @@
   align-items: flex-start;
 }
 
-/* bouton pour créer une prise de décision */
+.buttonContainer {
+  margin-left: 70%;
+}
 
 .buttonCreateDecision {
   width: 15rem;
@@ -13,9 +15,8 @@
   background-color: var(--color-tertiary-active);
   border-radius: 1em;
   color: white;
-  border-color: var(--color-tertiary-active);
+  border: 0;
   font-size: 1rem;
-  margin: auto auto;
 
   @media screen and (max-width: 768px) {
     width: 60%;
@@ -23,13 +24,11 @@
   }
 }
 
-/* bouton pour scroll en haut de la page */
-
 .buttonScrollToTop {
   width: 15%;
+  text-align: center;
   background-color: var(--color-primary-active);
   border-radius: 1em;
-  border-color: var(--color-primary-active);
   color: white;
   font-size: 1em;
   padding: 0.25em 0.25em;

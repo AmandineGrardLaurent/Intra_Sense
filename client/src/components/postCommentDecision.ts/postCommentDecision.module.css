@@ -30,7 +30,7 @@
   background-color: var(--color-primary-active);
   border-radius: 1em;
   color: white;
-  border-color: var(--color-primary-active);
+  border: 0;
   font-size: 0.8rem;
 
   @media screen and (max-width: 768px) {

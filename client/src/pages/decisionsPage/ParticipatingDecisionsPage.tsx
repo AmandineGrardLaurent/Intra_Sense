@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Element, Link } from "react-scroll";
 import { toast } from "react-toastify";
 import DecisionCard from "../../components/decisionCard/DecisionCard";
 import NavBar from "../../components/navBar/NavBar";
@@ -22,9 +24,13 @@ export default function AllDecisionPage() {
     <div>
       <NavBar />
       <main className={style.main}>
-        <button type="button" className={style.buttonCreateDecision}>
-          Créer une prise de décision
-        </button>
+        <Element name="createDecision" className={style.buttonContainer}>
+          <button type="button" className={style.buttonCreateDecision}>
+            <NavLink to={"/decisionformpage"}>
+              Créer une prise de décision
+            </NavLink>
+          </button>
+        </Element>
         <section>
           <h2 className={style.titleH2}>Toutes Les décisions</h2>
           <div className={style.cardsContainer}>
@@ -35,9 +41,14 @@ export default function AllDecisionPage() {
             ))}
           </div>
         </section>
-        <button type="button" className={style.buttonScrollToTop}>
+        <Link
+          to="createDecision"
+          smooth={true}
+          duration={500}
+          className={style.buttonScrollToTop}
+        >
           Revenir en haut
-        </button>
+        </Link>
       </main>
     </div>
   );

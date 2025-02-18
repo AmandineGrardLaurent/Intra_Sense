@@ -1,0 +1,37 @@
+.input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #b8bcc5;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.label {
+  display: block;
+  color: var(--color-primary-active);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.buttonAddCategory {
+  background-color: var(--color-tertiary-active);
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    font-size: 0.8em;
+  }
+}
+
+.container {
+  width: 50%;
+}
