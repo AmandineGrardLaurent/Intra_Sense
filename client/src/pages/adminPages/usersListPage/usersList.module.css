@@ -3,12 +3,3 @@
   flex-direction: column;
   gap: 1em;
 }
-
-.userCard {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-  border: 1px solid black;
-  border-radius: 1em;
-  padding: 0.75em;
-}

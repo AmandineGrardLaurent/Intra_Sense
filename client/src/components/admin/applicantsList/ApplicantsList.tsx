@@ -36,7 +36,7 @@ export default function ApplicantsList({ user }: { user: UserListType }) {
           {user.firstname} {user.lastname}
         </div>
         <div>
-          Inscrit le {new Date(user.created_at).toLocaleDateString("fr-CA")}
+          Inscrit le {new Date(user.created_at).toLocaleDateString("fr")}
         </div>
 
         <form onSubmit={handleSubmit(onAccept)}>

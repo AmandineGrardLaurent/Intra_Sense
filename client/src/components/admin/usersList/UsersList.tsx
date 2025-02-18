@@ -23,7 +23,7 @@ export default function UsersList({ user }: { user: UserListType }) {
           {user.firstname} {user.lastname}
         </div>
         <div>
-          Inscrit le {new Date(user.created_at).toLocaleDateString("fr-CA")}
+          Inscrit le {new Date(user.created_at).toLocaleDateString("fr")}
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <button type="submit">Supprimer</button>
