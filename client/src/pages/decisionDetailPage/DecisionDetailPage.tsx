@@ -3,9 +3,9 @@ import CommentsList from "../../components/commentsList/CommentsList";
 import DecisionDetail from "../../components/decisionDetail/DecisionDetail";
 import NavBar from "../../components/navBar/NavBar";
 import PostCommentDecision from "../../components/postCommentDecision.ts/PostCommentDecision";
-import UsersAnimatorsList from "../../components/usersAnimatorsList/UsersAnimatorsList";
-import UsersExpertList from "../../components/usersExpertList/UsersExpertList";
-import UsersImpactedtList from "../../components/usersImpactedList/UsersImpactedList";
+import UsersAnimatorsList from "../../components/users/usersAnimatorsList/UsersAnimatorsList";
+import UsersExpertList from "../../components/users/usersExpertList/UsersExpertList";
+import UsersImpactedtList from "../../components/users/usersImpactedList/UsersImpactedList";
 import style from "./decisionDetailPage.module.css";
 
 export default function DecisionDetailPage() {

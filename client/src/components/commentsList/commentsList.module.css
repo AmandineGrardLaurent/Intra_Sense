@@ -1,11 +1,8 @@
-/* .container {
-  display: flex;
-} */
-
 .container {
   display: flex;
   gap: 1em;
   flex-direction: column;
+
   @media screen and (max-width: 768px) {
     margin: 0.5em 1.25em;
     gap: 1.25em;
@@ -13,12 +10,11 @@
 }
 
 .titleH2 {
-  margin-bottom: 0.7em;
+  margin: 1.5rem 0 0.3rem 0;
   color: var(--color-tertiary-active);
   font-weight: normal;
   font-size: 2em;
   width: 100%;
-  /* border-bottom: 2px solid var(--color-tertiary-active); */
 
   @media screen and (max-width: 768px) {
     font-size: 1em;

@@ -1,11 +1,13 @@
 .container {
-  margin: 3rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   border: 1px solid rgb(199, 198, 198);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
+  padding: 1rem;
+  width: 20rem;
 }
 
 .titleH2 {
@@ -17,4 +19,26 @@
   padding: 0.2rem 0.5rem;
   text-align: center;
   margin-bottom: 0.5rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 5rem;
+  margin: 0.25rem;
+  @media screen and (max-width: 768px) {
+    width: 4rem;
+  }
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerUser {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }

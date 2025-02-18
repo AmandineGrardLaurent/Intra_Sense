@@ -51,7 +51,7 @@ export default function LoginForm() {
       <form onSubmit={handleSubmit(onSubmit)} className={style.card}>
         <h1 className={style.title}>Connexion</h1>
         <section>
-          <label htmlFor="email">
+          <label htmlFor="email" className={style.label}>
             Email
             <input
               id="email"
@@ -69,7 +69,7 @@ export default function LoginForm() {
             </span>
           </label>
 
-          <label htmlFor="hash_password">
+          <label htmlFor="hash_password" className={style.label}>
             Mot de passe
             <input
               id="hash_password"
@@ -92,10 +92,11 @@ export default function LoginForm() {
               {errors.hash_password?.message?.toString()}
             </span>
           </label>
-
-          <button type="submit" className={style.buttonLogin}>
-            Login
-          </button>
+          <div className={style.containerButton}>
+            <button type="submit" className={style.buttonLogin}>
+              Login
+            </button>
+          </div>
         </section>
       </form>
     </section>

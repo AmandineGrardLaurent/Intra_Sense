@@ -14,10 +14,11 @@
 }
 
 .title {
-  color: #9b084f;
+  color: var(--color-tertiary-active);
   font-size: 1.75rem;
   font-weight: 600;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .input,
@@ -49,21 +50,23 @@
 }
 
 .buttonCreateUser {
-  width: 80%;
+  width: 60%;
   padding: 0.25em 0.25em;
   background-color: var(--color-tertiary-active);
   border-radius: 1em;
   color: white;
   border-color: var(--color-tertiary-active);
   font-size: 1em;
-  margin: auto;
   @media screen and (max-width: 768px) {
     width: 60%;
-    margin: auto auto;
     font-size: 0.8em;
   }
 }
 
+.containerButton {
+  display: flex;
+  justify-content: center;
+}
 .buttonCreateUser:active {
   background-color: var(--color-primary-active);
   border: solid 1px var(--color-primary-active);

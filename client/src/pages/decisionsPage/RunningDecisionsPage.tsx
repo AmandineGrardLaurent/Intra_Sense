@@ -19,12 +19,12 @@ export default function AllDecisionPage() {
   return (
     <div>
       <NavBar />
-      <main>
+      <main className={style.main}>
         <button type="button" className={style.buttonCreateDecision}>
           Créer une prise de décision
         </button>
         <section>
-          <h2>Toutes Les décisions</h2>
+          <h2 className={style.titleH2}>Toutes Les décisions</h2>
           <div className={style.cardsContainer}>
             {decisions.map((decision) => (
               <article key={decision.id}>
