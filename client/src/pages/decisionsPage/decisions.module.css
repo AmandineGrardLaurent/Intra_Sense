@@ -1,9 +1,9 @@
-/* main {
+main {
   padding: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
-} */
+}
 
 /* bouton pour créer une prise de décision */
 
@@ -42,7 +42,7 @@
   }
 }
 
-/* h2 {
+h2 {
   color: var(--color-tertiary-active);
   text-decoration: underline;
   font-weight: normal;
@@ -50,9 +50,9 @@
   @media screen and (max-width: 768px) {
     font-size: 1em;
   }
-} */
+}
 
-/* section {
+section {
   display: flex;
   flex-direction: column;
   gap: 0.75em;
@@ -61,7 +61,7 @@
   @media screen and (max-width: 768px) {
     padding: 1em 0;
   }
-} */
+}
 
 .errorMessage {
   text-align: center;
