@@ -54,16 +54,14 @@ class UserRepository {
   }
 
   async readAllApplicant() {
-    const [rows] =
-      await databaseClient.query<Rows>(`SELECT user.*, role.label FROM user
+    const [rows] = await databaseClient.query<Rows>(`SELECT user.*, role.label FROM user
       JOIN role ON user.role_id = role.id 
       WHERE role.label = "applicant"`);
     return rows as UserType[];
   }
 
   async readAllAccepted() {
-    const [rows] =
-      await databaseClient.query<Rows>(`SELECT user.*, role.label FROM user
+    const [rows] = await databaseClient.query<Rows>(`SELECT user.*, role.label FROM user
       JOIN role ON user.role_id = role.id 
       WHERE role.label = "user"`);
     return rows as UserType[];

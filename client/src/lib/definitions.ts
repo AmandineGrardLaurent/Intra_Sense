@@ -98,6 +98,7 @@ type CommentType = {
 // profil
 
 type ProfileFormValues = {
+  id: number;
   firstname: string;
   lastname: string;
   email: string;

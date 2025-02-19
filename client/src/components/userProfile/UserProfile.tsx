@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import styles from "./userProfile.module.css";
 
-export default function UserProfile({ id }: { id: string }) {
+export default function UserProfile() {
   const navigate = useNavigate();
   const handleback = () => {
     navigate("/homepage");
@@ -60,7 +60,7 @@ export default function UserProfile({ id }: { id: string }) {
     const fetchProfileData = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/user/${id}`,
+          `${import.meta.env.VITE_API_URL}/api/profile`,
           {
             method: "GET",
             credentials: "include",
@@ -80,7 +80,7 @@ export default function UserProfile({ id }: { id: string }) {
     };
 
     fetchProfileData();
-  }, [reset, id]);
+  }, [reset]);
 
   const onSubmit = async (data: UpdateFormValues) => {
     try {
@@ -93,7 +93,7 @@ export default function UserProfile({ id }: { id: string }) {
       };
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/user/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/user/${user?.id}}`,
         {
           method: "PUT",
           headers: {

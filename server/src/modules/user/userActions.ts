@@ -1,5 +1,6 @@
 import type { RequestHandler } from "express";
-import Joi, { number } from "joi";
+import Joi from "joi";
+import jwt from "jsonwebtoken";
 import { decodeToken } from "../../services/jwt/jwt.helper";
 import userRepository from "./userRepository";
 
@@ -208,27 +209,18 @@ const addUserByTokenEmail: RequestHandler = async (req, res, next) => {
   }
 };
 
-const addUserByTokenEmailForComment: RequestHandler = async (
-  req,
-  res,
-  next,
-) => {
+const getCurrentUser: RequestHandler = async (req, res, next) => {
   try {
-    const decodedToken = (await decodeToken(
-      req.cookies?.auth_token,
-    )) as DecodedTokenType;
-    if (!decodedToken) {
-      res.status(403).json({ message: "Accès refusé" });
-      return;
-    }
-    const user: { user_id: number } | null =
-      await userRepository.readByEmailForComment(decodedToken?.email);
-    if (!user) {
-      res.status(404).json({ message: "Utilisateur non reconnu" });
-      return;
-    }
-    req.body.user_id = user.user_id;
-    next();
+    const tokenFromCookies = (await jwt.verify(
+      req.cookies.auth_token,
+      process.env.APP_SECRET as string,
+    )) as PayloadType;
+
+    const email: string = tokenFromCookies.email;
+
+    const user = await userRepository.readByEmail(email);
+
+    res.json(user);
   } catch (err) {
     next(err);
   }
@@ -247,5 +239,5 @@ export default {
   browseApplicant,
   editApplicant,
   addUserByTokenEmail,
-  addUserByTokenEmailForComment,
+  getCurrentUser,
 };

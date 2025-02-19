@@ -10,6 +10,7 @@ const router = express.Router();
 
 router.get("/api/user", userActions.browse);
 router.get("/api/user/:id", userActions.read);
+router.get("/api/profile", userActions.getCurrentUser);
 
 router.post(
   "/api/user",
@@ -21,6 +22,13 @@ router.post(
 
 router.put(
   "/api/user/:id",
+  userActions.modifiedData,
+  hashModifiedPassword,
+  userActions.edit,
+);
+
+router.put(
+  "/api/profile",
   userActions.modifiedData,
   hashModifiedPassword,
   userActions.edit,
