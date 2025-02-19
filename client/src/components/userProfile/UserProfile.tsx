@@ -117,7 +117,7 @@ export default function UserProfile() {
   return (
     <main className={styles.container}>
       <section className={styles.card}>
-        <header className={styles.header}>
+        <header className={styles.profileHeader}>
           <h2 className={styles.title}>Mes informations</h2>
           <section className={styles.avatarContainer}>
             <img
@@ -125,9 +125,7 @@ export default function UserProfile() {
               alt={`${user.firstname} ${user.lastname}`}
               className={styles.profilePicture}
             />
-            <button type="button" className={styles.photoButton}>
-              Changer de photo
-            </button>
+            <p className={styles.photoChange}>Changer de photo</p>
           </section>
         </header>
 
@@ -203,7 +201,9 @@ export default function UserProfile() {
             </section>
           </section>
           <p>
-            <i>Pour toute modification merci de saisir votre mot de passe.</i>
+            <i className={styles.information}>
+              Pour toute modification merci de saisir votre mot de passe.
+            </i>
           </p>
 
           <footer className={styles.buttonContainer}>

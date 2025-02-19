@@ -1,6 +1,6 @@
 .label {
   display: block;
-  color: #0891b2;
+  color: white;
   margin-bottom: 0.5rem;
   font-size: 1rem;
 }
@@ -12,4 +12,29 @@
   border-radius: 8px;
   font-size: 1rem;
   background: white;
+}
+
+.container {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgb(193, 11, 99, 0.7);
+  @media screen and (max-width: 768px) {
+    margin: 1rem;
+  }
+}
+
+.button {
+  width: 6rem;
+  padding: 0.25rem 0.25rem;
+  background-color: var(--color-primary-active);
+  border-radius: 1em;
+  color: white;
+  border: 0;
+  font-size: 0.8rem;
+
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    font-size: 0.8em;
+  }
 }
