@@ -14,7 +14,6 @@ export default function RunningDecisions() {
       })
       .catch(() => toast.error("Erreur de connexion au serveur"));
   }, []);
-
   return (
     <div>
       <main>

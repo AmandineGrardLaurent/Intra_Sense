@@ -3,7 +3,6 @@ import userDecisionRepository from "./userDecisionRepository";
 // pour créer tous les animateurs dans la table user_decision
 const addUserDecisionAnimator: RequestHandler = async (req, res, next) => {
   try {
-    // console.log(req.body.user_animator_id);
     if (req.body.user_animator_id === 0) {
       next();
     } else {

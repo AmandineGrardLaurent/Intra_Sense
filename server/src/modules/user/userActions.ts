@@ -187,7 +187,6 @@ const addUserByTokenEmail: RequestHandler = async (req, res, next) => {
   try {
     const token = req.cookies?.auth_token;
     const decodedToken = (await decodeToken(token)) as DecodedTokenType;
-
     if (!decodedToken) {
       res.status(403).json({ message: "Accès refusé" });
       return;
@@ -196,13 +195,12 @@ const addUserByTokenEmail: RequestHandler = async (req, res, next) => {
     const user = await userRepository.readByEmailForComment(
       decodedToken?.email,
     );
-
     if (!user) {
-      res.status(404).json({ message: "Utilisateur non reconnu" });
+      res.status(404).json({ message: "toto" });
       return;
     }
 
-    req.body.user_id = user.user_id;
+    req.body.user_id = user?.user_id;
     next();
   } catch (err) {
     next(err);
