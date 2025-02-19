@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import AddCategoryForm from "../addCategoryForm/AddCategoryForm";
 import style from "./decisionForm.module.css";
 
 function CreateDecisionForm() {
+  const navigate = useNavigate();
   const { register, handleSubmit, reset } = useForm<DataFormDecisionType>();
   const [categories, setCategories] = useState([] as CategoryType[]);
   const [countries, setCountries] = useState([] as CountryType[]);
@@ -50,6 +51,7 @@ function CreateDecisionForm() {
       );
       if (response.ok) {
         reset();
+        navigate("/homepage");
         toast.success("Décision envoyée à l'administrateur");
       } else {
         toast.error("Erreur lors de l'envoi de la décision");

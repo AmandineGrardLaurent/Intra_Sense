@@ -82,7 +82,7 @@ class DecisionRepository {
       `SELECT decision.*, user.firstname, user.lastname, user.avatar, country.label  AS country FROM decision 
       INNER JOIN country ON country.id = decision.country_id 
       INNER JOIN user ON user.id = decision.user_id
-      WHERE user_id=?
+      WHERE user_id=1
       `,
       [user_id],
     );

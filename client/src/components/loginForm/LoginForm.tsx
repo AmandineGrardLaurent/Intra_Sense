@@ -37,9 +37,8 @@ export default function LoginForm() {
       } else {
         toast.error(result.message || "Erreur lors de la connexion");
       }
-
       setTimeout(() => {
-        Navigate("/");
+        Navigate("/homepage");
       }, 1500);
     } catch (error) {
       toast.error("Erreur de connexion. Vérifiez vos identifiants.");

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import DecisionCard from "../../components/decisionCard/DecisionCard";
 import NavBar from "../../components/navBar/NavBar";
@@ -20,9 +21,11 @@ export default function RunningDecisionsPage() {
     <div>
       <NavBar />
       <main>
-        <button type="button" className={style.buttonCreateDecision}>
-          Créer une prise de décision
-        </button>
+        <NavLink to={"/decisionformpage"}>
+          <button type="button" className={style.buttonCreateDecision}>
+            Créer une prise de décision
+          </button>
+        </NavLink>
         <section>
           <h2>Toutes les décisions en cours</h2>
           <div className={style.cardsContainer}>
