@@ -1,0 +1,45 @@
+.userCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border-radius: 1em;
+  padding: 0.75em;
+  border: solid 2px var(--color-tertiary-active);
+  width: 12rem;
+  height: 100%;
+  align-items: center;
+}
+
+.avatar {
+  width: 8rem;
+  border-radius: 50%;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.name {
+  height: 2.5rem;
+  text-align: center;
+  color: var(--color-tertiary-active);
+  font-weight: 600;
+}
+
+.buttonAccepted {
+  background-color: var(--color-primary-active);
+}
+
+.buttonRefused {
+  background-color: var(--color-tertiary-active);
+}
+
+.buttonAccepted,
+.buttonRefused {
+  color: white;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  border: 0;
+}

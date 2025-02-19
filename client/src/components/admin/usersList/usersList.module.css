@@ -1,0 +1,31 @@
+.userCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border-radius: 1em;
+  padding: 0.75em;
+  border: solid 2px var(--color-primary-active);
+  width: 12rem;
+  height: 100%;
+  align-items: center;
+}
+
+.avatar {
+  width: 8rem;
+  border-radius: 50%;
+}
+
+.name {
+  height: 2.5rem;
+  text-align: center;
+  color: var(--color-primary-active);
+  font-weight: 600;
+}
+
+.buttonRefused {
+  color: white;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  border: 0;
+  background-color: var(--color-tertiary-active);
+}

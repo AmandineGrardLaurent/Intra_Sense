@@ -7,6 +7,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import AdminPage from "./pages/adminPages/profileAdminPage/ProfileAdminPage";
+import UsersListPage from "./pages/adminPages/usersListPage/UsersListPage";
 import DecisionDetailPage from "./pages/decisionDetailPage/DecisionDetailPage";
 import DecisionFormPage from "./pages/decisionFormPage/DecisionFormPage";
 import AllDecisionPage from "./pages/decisionsPage/AllDecisionsPage";
@@ -81,8 +83,16 @@ const router = createBrowserRouter([
         element: <ProfilePage />,
       },
       {
+        path: "/admin/profile",
+        element: <AdminPage />,
+      },
+      {
         path: "/decisionformpage",
         element: <DecisionFormPage />,
+      },
+      {
+        path: "/admin/userslist",
+        element: <UsersListPage />,
       },
     ],
   },

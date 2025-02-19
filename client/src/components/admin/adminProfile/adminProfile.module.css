@@ -1,0 +1,200 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: aliceblue;
+}
+
+.card {
+  background: white;
+  padding: 3rem;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 4px 6px -1px rgba(26, 26, 26, 0.1);
+  position: relative;
+  margin: auto !important;
+}
+
+.title {
+  color: var(--color-tertiary-active);
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--color-tertiary-active);
+}
+
+.avatarContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.profilePicture {
+  border-radius: 50%;
+  width: 8rem;
+}
+
+.photoChange {
+  color: black;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 0.8em;
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    font-size: 0.8em;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  color: #0891b2;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.inputError {
+  border-color: red;
+}
+
+.errorText {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 1rem;
+}
+
+.row .field {
+  flex: 1;
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.usersButton {
+  margin: auto auto;
+  padding: 10px 15px;
+  background-color: var(--color-tertiary-active);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.saveButton {
+  padding: 10px 15px;
+  background-color: var(--color-tertiary-active);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.saveButton:hover {
+  background-color: #7a073e;
+}
+
+.backButton {
+  background-color: var(--color-primary-active);
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background-color: #066a86;
+}
+
+.information {
+  color: var(--color-tertiary-active);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .avatarContainer {
+    align-items: center;
+  }
+  .profileHeader {
+    flex-direction: column;
+  }
+  .card {
+    max-width: 90%;
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .field {
+    margin-bottom: 1rem;
+  }
+}

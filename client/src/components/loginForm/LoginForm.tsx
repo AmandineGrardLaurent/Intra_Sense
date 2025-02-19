@@ -37,7 +37,6 @@ export default function LoginForm() {
       } else {
         toast.error(result.message || "Erreur lors de la connexion");
       }
-
       setTimeout(() => {
         Navigate("/homepage");
       }, 1500);
