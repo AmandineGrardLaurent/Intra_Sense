@@ -1,0 +1,47 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.container {
+  display: flex;
+}
+
+.detailsComments {
+  margin: 2rem 1rem 2rem 5rem;
+  @media screen and (max-width: 768px) {
+    margin: 0.25rem;
+  }
+}
+
+.users {
+  margin-top: 11.9rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
+}
+
+.buttonScrollToTop {
+  width: 15%;
+  text-align: center;
+  background-color: var(--color-primary-active);
+  border-radius: 1em;
+  color: white;
+  font-size: 1em;
+  padding: 0.25em 0.25em;
+  margin: 1rem auto;
+  @media screen and (max-width: 768px) {
+    width: 40%;
+    font-size: 0.8em;
+  }
+}
+
+.buttonScrollToTop:hover {
+  background-color: #066a86;
+}

@@ -38,7 +38,7 @@
   font-size: 1.2rem;
   display: block;
   margin-bottom: 5px;
-  color: #196c84;
+  color: var(--color-primary-active);
 }
 
 .input,
@@ -59,17 +59,29 @@
 .canceldButton {
   background-color: var(--color-primary-active);
   color: white;
-  padding: 10px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    font-size: 0.8em;
+  }
 }
 
 .addDecisionButton {
-  background-color: #9b084f;
+  background-color: var(--color-tertiary-active);
   color: white;
-  padding: 10px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    font-size: 0.8em;
+  }
 }
 
 .decisionContainer {
@@ -90,8 +102,8 @@
 
 .buttongroup {
   display: flex;
-  gap: 50px;
-  justify-content: space-evenly;
+  gap: 3rem;
+  justify-content: center;
   flex-direction: row;
 }
 

@@ -18,7 +18,7 @@ export default function DecisionDetail({ id }: { id: string }) {
         <article>
           <h1 className={style.title}>{decision.title}</h1>
           <p className={style.creatorNameTitle}>
-            Animé par{" "}
+            Animée par{" "}
             <span className={style.creatorName}>
               {decision.firstname} {decision.lastname}
             </span>
@@ -73,9 +73,6 @@ export default function DecisionDetail({ id }: { id: string }) {
           >
             <p>{decision.risk}</p>
           </ShowMoreText>
-        </article>
-        <article>
-          <h2 className={style.titleH2}>Les commentaires</h2>
         </article>
       </section>
     )

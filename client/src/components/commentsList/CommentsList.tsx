@@ -14,16 +14,19 @@ export default function CommentsList({ id }: { id: string }) {
 
   return (
     comments.length > 0 && (
-      <section className={style.container}>
-        {comments.map((comment) => (
-          <article key={comment.content} className={style.comment}>
-            <p>
-              {comment.firstname} {comment.lastname}
-            </p>
-            <p>{comment.content}</p>
-          </article>
-        ))}
-      </section>
+      <div>
+        <section className={style.container}>
+          <h2 className={style.titleH2}>Les commentaires</h2>
+          {comments.map((comment) => (
+            <article key={comment.content} className={style.comment}>
+              <p className={style.name}>
+                {comment.firstname} {comment.lastname}
+              </p>
+              <p className={style.paragraph}>{comment.content}</p>
+            </article>
+          ))}
+        </section>
+      </div>
     )
   );
 }

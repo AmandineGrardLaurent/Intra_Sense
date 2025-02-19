@@ -30,7 +30,7 @@ export default function PostCommentDecision({ id }: { id: string }) {
   };
 
   return (
-    <section>
+    <section className={style.container}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label className={style.label}>
           Postez votre commentaire
@@ -38,9 +38,12 @@ export default function PostCommentDecision({ id }: { id: string }) {
             type="textarea"
             id="content"
             {...register("content", { required: "champ obligatoire" })}
+            className={style.input}
           />
         </label>
-        <button type="submit">Publier</button>
+        <button type="submit" className={style.button}>
+          Publier
+        </button>
       </form>
     </section>
   );

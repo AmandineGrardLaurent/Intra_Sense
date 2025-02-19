@@ -31,21 +31,21 @@
 }
 
 .buttonContactUs {
-  width: 25%;
+  width: 10rem;
   height: 2em;
   background-color: var(--color-primary-active);
   border-radius: 1em;
-  border-color: var(--color-tertiary-active);
+  border: 0;
   font-size: 1em;
   margin: 0 2em 2em 0;
 }
 
 .buttonHomePage {
-  width: 25%;
+  width: 10rem;
   height: 2em;
   background-color: var(--color-tertiary-active);
   border-radius: 1em;
-  border-color: var(--color-primary-active);
+  border: 0;
   font-size: 1em;
   margin: 0 2em 2em 0;
 }
