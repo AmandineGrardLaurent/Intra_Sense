@@ -27,13 +27,6 @@ router.put(
   userActions.edit,
 );
 
-router.put(
-  "/api/profile",
-  userActions.modifiedData,
-  hashModifiedPassword,
-  userActions.edit,
-);
-
 router.delete("/api/user/:id", userActions.destroy);
 
 // affichage des animateurs, impactés, experts d'une décision
