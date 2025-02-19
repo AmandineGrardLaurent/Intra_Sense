@@ -1,14 +1,43 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import style from "./NavBar.module.css";
 
 function NavBar() {
   const navigate = useNavigate();
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen((currentState) => !currentState);
   };
+
+  useEffect(() => {
+    const fetchUserRole = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/admin/role`,
+          {
+            method: "GET",
+            credentials: "include",
+          },
+        );
+
+        if (!response.ok)
+          throw new Error("Erreur lors de la récupération du rôle");
+
+        const data = await response.json();
+
+        setIsAdmin(data.isAdmin);
+      } catch (error) {
+        console.error(
+          "Erreur lors de la récupération du rôle utilisateur:",
+          error,
+        );
+      }
+    };
+
+    fetchUserRole();
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -86,6 +115,16 @@ function NavBar() {
               className={style.profileImage}
             />
           </NavLink>
+        </li>
+        <li>
+          {isAdmin && (
+            <NavLink
+              to="/admin/profile"
+              className="flex items-center text-white hover:text-gray-200"
+            >
+              <span>Admin</span>
+            </NavLink>
+          )}
         </li>
         <li>
           <button type="button" onClick={handleLogout}>

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import styles from "./userProfile.module.css";
 
-export default function UserProfile({ id }: { id: string }) {
+export default function UserProfile() {
   const navigate = useNavigate();
   const handleback = () => {
     navigate("/homepage");
@@ -60,7 +60,7 @@ export default function UserProfile({ id }: { id: string }) {
     const fetchProfileData = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/user/${id}`,
+          `${import.meta.env.VITE_API_URL}/api/profile`,
           {
             method: "GET",
             credentials: "include",
@@ -80,7 +80,7 @@ export default function UserProfile({ id }: { id: string }) {
     };
 
     fetchProfileData();
-  }, [reset, id]);
+  }, [reset]);
 
   const onSubmit = async (data: UpdateFormValues) => {
     try {
@@ -93,7 +93,7 @@ export default function UserProfile({ id }: { id: string }) {
       };
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/user/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/user/${user?.id}}`,
         {
           method: "PUT",
           headers: {
@@ -117,7 +117,7 @@ export default function UserProfile({ id }: { id: string }) {
   return (
     <main className={styles.container}>
       <section className={styles.card}>
-        <header className={styles.header}>
+        <header className={styles.profileHeader}>
           <h2 className={styles.title}>Mes informations</h2>
           <section className={styles.avatarContainer}>
             <img
@@ -125,9 +125,7 @@ export default function UserProfile({ id }: { id: string }) {
               alt={`${user.firstname} ${user.lastname}`}
               className={styles.profilePicture}
             />
-            <button type="button" className={styles.photoButton}>
-              Changer de photo
-            </button>
+            <p className={styles.photoChange}>Changer de photo</p>
           </section>
         </header>
 
@@ -203,7 +201,9 @@ export default function UserProfile({ id }: { id: string }) {
             </section>
           </section>
           <p>
-            <i>Pour toute modification merci de saisir votre mot de passe.</i>
+            <i className={styles.information}>
+              Pour toute modification merci de saisir votre mot de passe.
+            </i>
           </p>
 
           <footer className={styles.buttonContainer}>

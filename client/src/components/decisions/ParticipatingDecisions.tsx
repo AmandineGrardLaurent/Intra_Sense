@@ -18,18 +18,14 @@ export default function ParticipatingDecisions() {
   }, []);
 
   return (
-    <div>
-      <main>
-        <section>
-          <div className={style.cardsContainer}>
-            {decisions.slice(0, 5).map((decision) => (
-              <article key={decision.id}>
-                <DecisionCard decision={decision} />
-              </article>
-            ))}
-          </div>
-        </section>
-      </main>
-    </div>
+    <section className={style.main}>
+      <div className={style.cardsContainer}>
+        {decisions.slice(0, 5).map((decision) => (
+          <article key={decision.id}>
+            <DecisionCard decision={decision} />
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }

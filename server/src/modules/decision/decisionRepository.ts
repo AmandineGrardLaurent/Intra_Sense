@@ -25,7 +25,7 @@ class DecisionRepository {
   async create(decision: Decision) {
     const [result] = await databaseClient.query<Result>(
       `INSERT INTO decision (title, description, max_date, min_date, context, profit, risk, step, country_id, user_id)  
-      VALUES (?,?,?,?,?,?,?,"begin",?,?)`,
+      VALUES (?,?,?,?,?,?,?,"in progress",?,?)`,
       [
         decision.title,
         decision.description,

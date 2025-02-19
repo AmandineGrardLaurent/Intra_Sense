@@ -98,6 +98,7 @@ type CommentType = {
 // profil
 
 type ProfileFormValues = {
+  id: number;
   firstname: string;
   lastname: string;
   email: string;
@@ -154,4 +155,9 @@ type DataUserType = {
   role: string;
   role_id: number;
   user_id: number;
+};
+
+type AdminType = {
+  id: number;
+  isAdmin: boolean;
 };

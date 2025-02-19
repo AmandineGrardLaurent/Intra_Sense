@@ -1,5 +1,6 @@
 import type { RequestHandler } from "express";
-import Joi, { number } from "joi";
+import Joi from "joi";
+import jwt from "jsonwebtoken";
 import { decodeToken } from "../../services/jwt/jwt.helper";
 import userRepository from "./userRepository";
 
@@ -186,7 +187,6 @@ const addUserByTokenEmail: RequestHandler = async (req, res, next) => {
   try {
     const token = req.cookies?.auth_token;
     const decodedToken = (await decodeToken(token)) as DecodedTokenType;
-
     if (!decodedToken) {
       res.status(403).json({ message: "Accès refusé" });
       return;
@@ -195,40 +195,49 @@ const addUserByTokenEmail: RequestHandler = async (req, res, next) => {
     const user = await userRepository.readByEmailForComment(
       decodedToken?.email,
     );
-
     if (!user) {
-      res.status(404).json({ message: "Utilisateur non reconnu" });
+      res.status(404).json({ message: "toto" });
       return;
     }
 
-    req.body.user_id = user.user_id;
+    req.body.user_id = user?.user_id;
     next();
   } catch (err) {
     next(err);
   }
 };
 
-const addUserByTokenEmailForComment: RequestHandler = async (
-  req,
-  res,
-  next,
-) => {
+const getCurrentUser: RequestHandler = async (req, res, next) => {
   try {
-    const decodedToken = (await decodeToken(
-      req.cookies?.auth_token,
-    )) as DecodedTokenType;
-    if (!decodedToken) {
-      res.status(403).json({ message: "Accès refusé" });
-      return;
+    const tokenFromCookies = (await jwt.verify(
+      req.cookies.auth_token,
+      process.env.APP_SECRET as string,
+    )) as PayloadType;
+
+    const email: string = tokenFromCookies.email;
+
+    const user = await userRepository.readByEmail(email);
+
+    res.json(user);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const readRoleFromToken: RequestHandler = async (req, res, next) => {
+  try {
+    const tokenFromCookies = jwt.decode(req.cookies.auth_token) as PayloadType;
+
+    const email: string = tokenFromCookies?.email;
+    const roleId = await userRepository.readRoleByEmail(email);
+    if (roleId !== 3) {
+      res.json({
+        isAdmin: false,
+        message: "Accès interdit. Tu n'es pas un admin",
+      });
     }
-    const user: { user_id: number } | null =
-      await userRepository.readByEmailForComment(decodedToken?.email);
-    if (!user) {
-      res.status(404).json({ message: "Utilisateur non reconnu" });
-      return;
-    }
-    req.body.user_id = user.user_id;
-    next();
+
+    res.json({ isAdmin: true, message: "bienvenue admin" });
   } catch (err) {
     next(err);
   }
@@ -247,5 +256,6 @@ export default {
   browseApplicant,
   editApplicant,
   addUserByTokenEmail,
-  addUserByTokenEmailForComment,
+  getCurrentUser,
+  readRoleFromToken,
 };

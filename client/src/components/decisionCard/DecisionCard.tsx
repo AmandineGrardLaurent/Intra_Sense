@@ -8,8 +8,7 @@ export default function DecisionCard({
     <NavLink to={`/decisionslist/${decision.id}`}>
       <section className={style.card}>
         <p className={style.userInfo}>
-          {" "}
-          <span className={style.userName}>{decision.country}</span>
+          <span className={style.country}>{decision.country}</span>
         </p>
 
         <h2 className={style.title}>{decision.title}</h2>

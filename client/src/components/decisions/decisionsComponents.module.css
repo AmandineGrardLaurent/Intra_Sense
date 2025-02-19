@@ -1,81 +1,16 @@
-main {
+.main {
   padding: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* bouton pour créer une prise de décision */
-
-.buttonCreateDecision {
-  width: 20%;
-  padding: 0.25em 0.25em;
-  background-color: var(--color-tertiary-active);
-  border-radius: 1em;
-  color: white;
-  margin-left: 70%;
-  border-color: var(--color-tertiary-active);
-  font-size: 1em;
-
-  @media screen and (max-width: 768px) {
-    width: 60%;
-    margin: auto auto;
-    font-size: 0.8em;
-  }
-}
-
-/* bouton pour scroll en haut de la page */
-
-.buttonScrollToTop {
-  width: 15%;
-  background-color: var(--color-primary-active);
-  border-radius: 1em;
-  border-color: var(--color-primary-active);
-  color: white;
-  font-size: 1em;
-  padding: 0.25em 0.25em;
-  margin: auto auto;
-
-  @media screen and (max-width: 768px) {
-    width: 40%;
-    font-size: 0.8em;
-  }
-}
-
-h2 {
-  color: var(--color-tertiary-active);
-  text-decoration: underline;
-  font-weight: normal;
-
-  @media screen and (max-width: 768px) {
-    font-size: 1em;
-  }
-}
-
-section {
+.cardsContainer {
   display: flex;
-  flex-direction: column;
-  gap: 0.75em;
-  padding: 1em;
-
+  gap: 1.5em;
+  flex-wrap: wrap;
   @media screen and (max-width: 768px) {
-    padding: 1em 0;
-  }
-}
-
-.errorMessage {
-  text-align: center;
-  color: #ef4444;
-  font-size: 1.25rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 8px;
-  max-width: 400px;
-  margin: 2rem auto;
-}
-
-@media screen and (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
+    gap: 1em;
   }
 }

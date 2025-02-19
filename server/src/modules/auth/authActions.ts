@@ -33,11 +33,10 @@ export const verifyToken: RequestHandler = async (req, res, next) => {
       req.cookies.auth_token,
       process.env.APP_SECRET as string,
     );
-
     if (verifiedToken) {
-      res.json({ authentified: true, message: "tu es connecté" });
+      next();
     } else {
-      res.json({ authentified: false, message: "token invalide" });
+      res.json({ authentified: false });
       return;
     }
   } catch (err) {
@@ -45,13 +44,12 @@ export const verifyToken: RequestHandler = async (req, res, next) => {
   }
 };
 
-export const authWall: RequestHandler = (req, res, next) => {
-  const currentToken = req.cookies?.auth_token;
-
-  if (currentToken) {
-    next();
-  } else {
-    res.json({ authentified: false });
-    return;
-  }
+export const logout: RequestHandler = (req, res) => {
+  res.clearCookie("auth_token", {
+    httpOnly: true,
+    secure: false,
+    sameSite: "strict",
+    path: "/",
+  });
+  res.status(200).json({ message: "Déconnexion réussie" });
 };

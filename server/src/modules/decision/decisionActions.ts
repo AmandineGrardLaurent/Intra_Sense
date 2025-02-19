@@ -83,12 +83,12 @@ const addDecision: RequestHandler = async (req, res, next) => {
     };
     const insertId = await decisionRepository.create(newDecision);
 
-    if (data) {
-      res.status(201).json({ insertId });
-    } else {
-      req.body.decision_id = insertId;
-      next();
-    }
+    // if (!data) {
+    //   res.status(404);
+    // } else {
+    req.body.decision_id = insertId;
+    next();
+    // }
   } catch (err) {
     next(err);
   }

@@ -51,7 +51,7 @@ export default function CreateUserForm() {
       await response.json();
       reset();
       toast.success("Demande envoyée à l'administrateur");
-      navigate("/homepage");
+      navigate("/");
     } catch (error) {
       toast.error("Erreur lors de l'envoi...");
     }
@@ -197,9 +197,11 @@ export default function CreateUserForm() {
               {...register("avatar", { required: "champ obligatoire" })}
             />
           </label>
-          <button type="submit" className={style.buttonCreateUser}>
-            Envoyer ma demande à l'administrateur
-          </button>
+          <div className={style.containerButton}>
+            <button type="submit" className={style.buttonCreateUser}>
+              Envoyer ma demande
+            </button>
+          </div>
         </section>
       </form>
     </section>

@@ -61,9 +61,10 @@ export default function AdminProfile() {
     const fetchProfileData = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/user/1`,
+          `${import.meta.env.VITE_API_URL}/api/profile`,
           {
             method: "GET",
+            credentials: "include",
           },
         );
 

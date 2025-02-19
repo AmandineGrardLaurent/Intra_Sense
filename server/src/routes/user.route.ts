@@ -10,6 +10,7 @@ const router = express.Router();
 
 router.get("/api/user", userActions.browse);
 router.get("/api/user/:id", userActions.read);
+router.get("/api/profile", userActions.getCurrentUser);
 
 router.post(
   "/api/user",

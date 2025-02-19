@@ -9,7 +9,7 @@
 }
 
 .title {
-  color: #9b084f;
+  color: var(--color-tertiary-active);
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -24,7 +24,7 @@
   display: block;
   color: #0891b2;
   margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .input {
@@ -57,16 +57,9 @@
   margin-bottom: 1rem;
 }
 
-.buttonSignup,
-.buttonLogin {
-  flex: 1;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  text-transform: lowercase;
+.containerButton {
+  display: flex;
+  justify-content: center;
 }
 
 .buttonSignup {
@@ -75,13 +68,18 @@
 }
 
 .buttonLogin {
-  background-color: #0891b2;
+  background-color: var(--color-tertiary-active);
   color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .buttonSignup:hover,
 .buttonLogin:hover {
-  background-color: #0e7490;
+  background-color: var(--color-primary-active);
 }
 
 .forgotPassword {
@@ -116,12 +114,6 @@
   .buttonGroup {
     margin-top: 2rem;
     gap: 2rem;
-  }
-
-  .buttonSignup,
-  .buttonLogin {
-    padding: 1rem 2rem;
-    font-size: 1rem;
   }
 
   .forgotPassword {

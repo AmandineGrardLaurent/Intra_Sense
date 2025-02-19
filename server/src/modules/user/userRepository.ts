@@ -54,16 +54,14 @@ class UserRepository {
   }
 
   async readAllApplicant() {
-    const [rows] =
-      await databaseClient.query<Rows>(`SELECT user.*, role.label FROM user
+    const [rows] = await databaseClient.query<Rows>(`SELECT user.*, role.label FROM user
       JOIN role ON user.role_id = role.id 
       WHERE role.label = "applicant"`);
     return rows as UserType[];
   }
 
   async readAllAccepted() {
-    const [rows] =
-      await databaseClient.query<Rows>(`SELECT user.*, role.label FROM user
+    const [rows] = await databaseClient.query<Rows>(`SELECT user.*, role.label FROM user
       JOIN role ON user.role_id = role.id 
       WHERE role.label = "user"`);
     return rows as UserType[];
@@ -105,6 +103,19 @@ class UserRepository {
 
     const result = user as { user_id: number }[];
     return result[0];
+  }
+
+  async readRoleByEmail(email: string) {
+    const [roleId] = await databaseClient.query<Rows>(
+      `
+  SELECT role_id
+  FROM user 
+  WHERE email = ?
+  `,
+      [email],
+    );
+
+    return roleId.length > 0 ? roleId[0].role_id : null;
   }
 }
 
