@@ -1,5 +1,6 @@
 import type { RequestHandler } from "express";
 import Joi, { number } from "joi";
+import { decodeToken } from "../../services/jwt/jwt.helper";
 import userRepository from "./userRepository";
 
 const browse: RequestHandler = async (req, res, next) => {
@@ -181,6 +182,58 @@ const modifiedData: RequestHandler = async (req, res, next) => {
   }
 };
 
+const addUserByTokenEmail: RequestHandler = async (req, res, next) => {
+  try {
+    const token = req.cookies?.auth_token;
+    const decodedToken = (await decodeToken(token)) as DecodedTokenType;
+
+    if (!decodedToken) {
+      res.status(403).json({ message: "Accès refusé" });
+      return;
+    }
+
+    const user = await userRepository.readByEmailForComment(
+      decodedToken?.email,
+    );
+
+    if (!user) {
+      res.status(404).json({ message: "Utilisateur non reconnu" });
+      return;
+    }
+
+    req.body.user_id = user.user_id;
+    next();
+  } catch (err) {
+    next(err);
+  }
+};
+
+const addUserByTokenEmailForComment: RequestHandler = async (
+  req,
+  res,
+  next,
+) => {
+  try {
+    const decodedToken = (await decodeToken(
+      req.cookies?.auth_token,
+    )) as DecodedTokenType;
+    if (!decodedToken) {
+      res.status(403).json({ message: "Accès refusé" });
+      return;
+    }
+    const user: { user_id: number } | null =
+      await userRepository.readByEmailForComment(decodedToken?.email);
+    if (!user) {
+      res.status(404).json({ message: "Utilisateur non reconnu" });
+      return;
+    }
+    req.body.user_id = user.user_id;
+    next();
+  } catch (err) {
+    next(err);
+  }
+};
+
 export default {
   browse,
   read,
@@ -193,4 +246,6 @@ export default {
   browseAccepted,
   browseApplicant,
   editApplicant,
+  addUserByTokenEmail,
+  addUserByTokenEmailForComment,
 };

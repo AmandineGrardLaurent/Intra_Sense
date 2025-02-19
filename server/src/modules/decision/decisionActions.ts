@@ -22,7 +22,7 @@ const browseArchivedDecisions: RequestHandler = async (req, res, next) => {
 
 const browseMyDecisions: RequestHandler = async (req, res, next) => {
   try {
-    const user_id = Number.parseInt(req.params.user_id);
+    const user_id = req.body.user_id;
     const decision = await decisionRepository.readMyDecisions(user_id);
     res.json(decision);
   } catch (err) {
@@ -32,7 +32,7 @@ const browseMyDecisions: RequestHandler = async (req, res, next) => {
 
 const browseParticipatingDecisions: RequestHandler = async (req, res, next) => {
   try {
-    const user_id = Number.parseInt(req.params.user_id);
+    const user_id = req.body.user_id;
     const decision =
       await decisionRepository.readParticipatingDecisions(user_id);
     res.json(decision);
@@ -65,25 +65,6 @@ const read: RequestHandler = async (req, res, next) => {
   }
 };
 
-const add: RequestHandler = async (req, res, next) => {
-  try {
-    const newDecision = {
-      title: req.body.title,
-      description: req.body.description,
-      max_date: req.body.max_date,
-      min_date: req.body.min_date,
-      context: req.body.context,
-      profit: req.body.profit,
-      risk: req.body.risk,
-      country_id: Number.parseInt(req.body.country_id),
-    };
-    const insertId = await decisionRepository.create(newDecision);
-    res.status(201).json({ insertId });
-  } catch (err) {
-    next(err);
-  }
-};
-
 // Crée une décision et récupère l'id
 const addDecision: RequestHandler = async (req, res, next) => {
   const { data = null } = req.body;
@@ -98,6 +79,7 @@ const addDecision: RequestHandler = async (req, res, next) => {
       profit: req.body.profit,
       risk: req.body.risk,
       country_id: Number.parseInt(req.body.country_id),
+      user_id: req.body.user_id,
     };
     const insertId = await decisionRepository.create(newDecision);
 
@@ -122,6 +104,7 @@ const validateDataDecisionForm: RequestHandler = async (req, res, next) => {
     profit: Joi.string().required(),
     risk: Joi.string().required(),
     country_id: Joi.number().required(),
+    user_id: Joi.number().required(),
     category_id: Joi.array().items(Joi.number().required()),
     user_animator_id: Joi.array().items(Joi.number().required()),
     user_expert_id: Joi.array().items(Joi.number().required()),
@@ -138,7 +121,6 @@ const validateDataDecisionForm: RequestHandler = async (req, res, next) => {
 
 export default {
   read,
-  add,
   addDecision,
   validateDataDecisionForm,
   browseAllDecisions,

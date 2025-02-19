@@ -49,7 +49,6 @@ function CreateDecisionForm() {
           body: JSON.stringify(data),
         },
       );
-
       if (response.ok) {
         reset();
         navigate("/homepage");

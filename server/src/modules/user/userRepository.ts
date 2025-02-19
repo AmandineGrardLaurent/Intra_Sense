@@ -94,6 +94,18 @@ class UserRepository {
     const result = user as UserType[];
     return result.length > 0 ? result[0] : null;
   }
+
+  async readByEmailForComment(
+    email: string,
+  ): Promise<{ user_id: number } | null> {
+    const [user] = await databaseClient.query<Rows>(
+      "SELECT id AS user_id FROM user WHERE email = ?",
+      [email],
+    );
+
+    const result = user as { user_id: number }[];
+    return result[0];
+  }
 }
 
 export default new UserRepository();

@@ -11,11 +11,11 @@ import AdminPage from "./pages/adminPages/profileAdminPage/ProfileAdminPage";
 import UsersListPage from "./pages/adminPages/usersListPage/UsersListPage";
 import DecisionDetailPage from "./pages/decisionDetailPage/DecisionDetailPage";
 import DecisionFormPage from "./pages/decisionFormPage/DecisionFormPage";
-import AllDecisionPage from "./pages/decisionsPage/AllDecisionsPage";
-import ArchivedDecisionPage from "./pages/decisionsPage/ArchivedDecisionsPage";
-import MyDecisionPage from "./pages/decisionsPage/MyDecisionsPage";
-import ParticipatingDecisionPage from "./pages/decisionsPage/ParticipatingDecisionsPage";
-import RunningDecisionPage from "./pages/decisionsPage/RunningDecisionsPage";
+import AllDecisionsPage from "./pages/decisionsPage/AllDecisionsPage";
+import ArchivedDecisionsPage from "./pages/decisionsPage/ArchivedDecisionsPage";
+import MyDecisionsPage from "./pages/decisionsPage/MyDecisionsPage";
+import ParticipatingDecisionsPage from "./pages/decisionsPage/ParticipatingDecisionsPage";
+import RunningDecisionsPage from "./pages/decisionsPage/RunningDecisionsPage";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 import HomePage from "./pages/homePage/HomePage";
 import LoginPage from "./pages/loginPage/LoginPage";
@@ -51,24 +51,24 @@ const router = createBrowserRouter([
         element: <DecisionDetailPage />,
       },
       {
-        path: "/participatingdecision",
-        element: <ParticipatingDecisionPage />,
+        path: "/participatingdecisions",
+        element: <ParticipatingDecisionsPage />,
       },
       {
-        path: "/mydecision",
-        element: <MyDecisionPage />,
+        path: "/mydecisions",
+        element: <MyDecisionsPage />,
       },
       {
-        path: "/runningdecision",
-        element: <RunningDecisionPage />,
+        path: "/runningdecisions",
+        element: <RunningDecisionsPage />,
       },
       {
-        path: "/archiveddecision",
-        element: <ArchivedDecisionPage />,
+        path: "/archiveddecisions",
+        element: <ArchivedDecisionsPage />,
       },
       {
-        path: "/alldecision",
-        element: <AllDecisionPage />,
+        path: "/alldecisions",
+        element: <AllDecisionsPage />,
       },
       {
         path: "*",

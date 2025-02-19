@@ -5,7 +5,7 @@ import DecisionCard from "../../components/decisionCard/DecisionCard";
 import NavBar from "../../components/navBar/NavBar";
 import style from "./decisions.module.css";
 
-export default function AllDecisionPage() {
+export default function MyDecisionsPage() {
   const [decisions, setDecisions] = useState<DecisionDetailCard[]>([]);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function AllDecisionPage() {
           </button>
         </NavLink>
         <section>
-          <h2>Toutes Les décisions</h2>
+          <h2>Toutes mes décisions</h2>
           <div className={style.cardsContainer}>
             {decisions.map((decision) => (
               <article key={decision.id}>

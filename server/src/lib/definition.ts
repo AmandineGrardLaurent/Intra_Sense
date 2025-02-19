@@ -47,10 +47,24 @@ type Vote = {
   state: boolean;
   user_id: string;
 };
-// comment
 
+// comment
 type CommentType = {
   content: string;
   user_id: number;
   decision_id: number;
+};
+
+// token
+
+type DecodedTokenType = {
+  email: string;
+  iat: number;
+  exp: number;
+};
+
+type PayloadType = {
+  email: string;
+  iat: number;
+  exp: number;
 };
