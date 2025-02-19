@@ -24,10 +24,7 @@ export default function UsersAnimatorsList({ id }: { id: string }) {
                   alt={animator.lastname}
                   className={style.avatar}
                 />
-                <p>
-                  {animator.firstname}
-                  {/* {animator.lastname} */}
-                </p>
+                <p>{animator.firstname}</p>
               </article>
             ))}
           </div>

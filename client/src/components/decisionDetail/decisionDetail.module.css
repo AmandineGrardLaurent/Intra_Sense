@@ -31,7 +31,6 @@
   font-weight: normal;
   font-size: 2em;
   width: 100%;
-  /* border-bottom: 2px solid var(--color-tertiary-active); */
 
   @media screen and (max-width: 768px) {
     font-size: 1em;

@@ -25,10 +25,7 @@ export default function UsersExpertList({ id }: { id: string }) {
                   alt={expert.lastname}
                   className={style.avatar}
                 />
-                <p>
-                  {expert.firstname}
-                  {/* {expert.lastname} */}
-                </p>
+                <p>{expert.firstname}</p>
               </article>
             ))}
           </div>

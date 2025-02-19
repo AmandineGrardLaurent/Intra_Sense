@@ -25,10 +25,7 @@ export default function UsersImpactedtList({ id }: { id: string }) {
                   alt={impacted.lastname}
                   className={style.avatar}
                 />
-                <p>
-                  {impacted.firstname}
-                  {/* {impacted.lastname} */}
-                </p>
+                <p>{impacted.firstname}</p>
               </article>
             ))}
           </div>
