@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post(
   "/api/comment",
-  userActions.addUserByTokenEmailForComment,
+  userActions.addUserByTokenEmail,
   commentActions.validateDataForm,
   commentActions.add,
 );
