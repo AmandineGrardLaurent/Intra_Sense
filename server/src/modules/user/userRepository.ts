@@ -104,6 +104,19 @@ class UserRepository {
     const result = user as { user_id: number }[];
     return result[0];
   }
+
+  async readRoleByEmail(email: string) {
+    const [roleId] = await databaseClient.query<Rows>(
+      `
+  SELECT role_id
+  FROM user 
+  WHERE email = ?
+  `,
+      [email],
+    );
+
+    return roleId.length > 0 ? roleId[0].role_id : null;
+  }
 }
 
 export default new UserRepository();

@@ -224,6 +224,25 @@ const getCurrentUser: RequestHandler = async (req, res, next) => {
   }
 };
 
+const readRoleFromToken: RequestHandler = async (req, res, next) => {
+  try {
+    const tokenFromCookies = jwt.decode(req.cookies.auth_token) as PayloadType;
+
+    const email: string = tokenFromCookies?.email;
+    const roleId = await userRepository.readRoleByEmail(email);
+    if (roleId !== 3) {
+      res.json({
+        isAdmin: false,
+        message: "Accès interdit. Tu n'es pas un admin",
+      });
+    }
+
+    res.json({ isAdmin: true, message: "bienvenue admin" });
+  } catch (err) {
+    next(err);
+  }
+};
+
 export default {
   browse,
   read,
@@ -238,4 +257,5 @@ export default {
   editApplicant,
   addUserByTokenEmail,
   getCurrentUser,
+  readRoleFromToken,
 };

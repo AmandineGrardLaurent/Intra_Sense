@@ -156,3 +156,8 @@ type DataUserType = {
   role_id: number;
   user_id: number;
 };
+
+type AdminType = {
+  id: number;
+  isAdmin: boolean;
+};
