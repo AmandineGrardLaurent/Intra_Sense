@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import style from "./createUserForm.module.css";
 
 export default function CreateUserForm() {
+  const navigate = useNavigate();
   const minPassword: number = 8;
   const maxPassword: number = 255;
   const [countries, setCountries] = useState([]);
@@ -49,6 +51,7 @@ export default function CreateUserForm() {
       await response.json();
       reset();
       toast.success("Demande envoyée à l'administrateur");
+      navigate("/homepage");
     } catch (error) {
       toast.error("Erreur lors de l'envoi...");
     }

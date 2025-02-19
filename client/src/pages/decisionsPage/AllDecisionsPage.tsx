@@ -6,7 +6,7 @@ import DecisionCard from "../../components/decisionCard/DecisionCard";
 import NavBar from "../../components/navBar/NavBar";
 import style from "./decisions.module.css";
 
-export default function AllDecisionPage() {
+export default function AllDecisionsPage() {
   const [decisions, setDecisions] = useState<DecisionDetailCard[]>([]);
 
   useEffect(() => {

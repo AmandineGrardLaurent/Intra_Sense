@@ -53,6 +53,30 @@ class UserRepository {
     return result.affectedRows;
   }
 
+  async readAllApplicant() {
+    const [rows] =
+      await databaseClient.query<Rows>(`SELECT user.*, role.label FROM user
+      JOIN role ON user.role_id = role.id 
+      WHERE role.label = "applicant"`);
+    return rows as UserType[];
+  }
+
+  async readAllAccepted() {
+    const [rows] =
+      await databaseClient.query<Rows>(`SELECT user.*, role.label FROM user
+      JOIN role ON user.role_id = role.id 
+      WHERE role.label = "user"`);
+    return rows as UserType[];
+  }
+
+  async updateApplicant(userId: number) {
+    const [result] = await databaseClient.query<Result>(
+      "UPDATE user SET role_id=2 WHERE id = ?",
+      [userId],
+    );
+    return result.affectedRows;
+  }
+
   async checkUniqueEmail(userEmail: string) {
     const [rows] = await databaseClient.query<Rows>(
       "SELECT * FROM user WHERE email= ?",
@@ -69,6 +93,18 @@ class UserRepository {
 
     const result = user as UserType[];
     return result.length > 0 ? result[0] : null;
+  }
+
+  async readByEmailForComment(
+    email: string,
+  ): Promise<{ user_id: number } | null> {
+    const [user] = await databaseClient.query<Rows>(
+      "SELECT id AS user_id FROM user WHERE email = ?",
+      [email],
+    );
+
+    const result = user as { user_id: number }[];
+    return result[0];
   }
 }
 

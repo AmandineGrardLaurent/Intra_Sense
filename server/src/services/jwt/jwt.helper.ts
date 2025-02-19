@@ -1,11 +1,15 @@
 import jwt from "jsonwebtoken";
 
-export const encodeJWT = async (payload: UserType) => {
-  const { email, firstname } = payload;
+export const encodeJWT = async (payload: PayloadType) => {
+  const { email } = payload;
 
-  const obj = { email, firstname };
+  const data = { email };
 
-  return jwt.sign(obj, process.env.APP_SECRET as string, {
+  return jwt.sign(data, process.env.APP_SECRET as string, {
     expiresIn: "24h",
   });
+};
+
+export const decodeToken = (token: string) => {
+  return jwt.decode(token);
 };

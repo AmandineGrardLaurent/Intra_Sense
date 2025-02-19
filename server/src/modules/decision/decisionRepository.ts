@@ -10,6 +10,7 @@ type Decision = {
   context: string;
   profit: string;
   risk: string;
+  user_id: number;
 };
 
 type DecisionCard = {
@@ -24,7 +25,7 @@ class DecisionRepository {
   async create(decision: Decision) {
     const [result] = await databaseClient.query<Result>(
       `INSERT INTO decision (title, description, max_date, min_date, context, profit, risk, step, country_id, user_id)  
-      VALUES (?,?,?,?,?,?,?,"begin",?,1)`,
+      VALUES (?,?,?,?,?,?,?,"begin",?,?)`,
       [
         decision.title,
         decision.description,
@@ -34,6 +35,7 @@ class DecisionRepository {
         decision.profit,
         decision.risk,
         decision.country_id,
+        decision.user_id,
       ],
     );
     return result.insertId;
@@ -80,7 +82,7 @@ class DecisionRepository {
       `SELECT decision.*, user.firstname, user.lastname, user.avatar, country.label  AS country FROM decision 
       INNER JOIN country ON country.id = decision.country_id 
       INNER JOIN user ON user.id = decision.user_id
-      WHERE user_id=?
+      WHERE user_id=1
       `,
       [user_id],
     );
@@ -89,10 +91,12 @@ class DecisionRepository {
 
   async readParticipatingDecisions(user_id: number) {
     const [rows] = await databaseClient.query<Rows>(
-      `SELECT decision.*, user.firstname, user.lastname, user.avatar, country.label AS country FROM decision
+      `SELECT decision.*, user.firstname, user.lastname, user.avatar, country.label AS country, user_decision.user_id AS user_participating, user_decision.decision_id AS decision_participating
+      FROM decision
       INNER JOIN country ON country.id = decision.country_id
-      INNER JOIN user ON user.country_id = decision.country_id
-      WHERE decision.step="in progress" AND user.id =?
+      INNER JOIN user ON user.id = decision.user_id
+      INNER JOIN user_decision ON user_decision.decision_id = decision.id
+      WHERE user_decision.user_id = ? AND decision.step="in progress"
       `,
       [user_id],
     );

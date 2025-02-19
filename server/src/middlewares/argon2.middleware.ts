@@ -37,7 +37,6 @@ export const hashModifiedPassword: RequestHandler = async (req, res, next) => {
 export const comparePassword: RequestHandler = async (req, res, next) => {
   try {
     const { dbpassword, hash_password } = req.body;
-
     const isValid = await verifyPasswordHelper(dbpassword, hash_password);
     if (!isValid) {
       req.body.dbpassword = undefined;

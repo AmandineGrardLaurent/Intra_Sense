@@ -6,7 +6,7 @@ import DecisionCard from "../../components/decisionCard/DecisionCard";
 import NavBar from "../../components/navBar/NavBar";
 import style from "./decisions.module.css";
 
-export default function AllDecisionPage() {
+export default function ParticipatingDecisionsPage() {
   const [decisions, setDecisions] = useState<DecisionDetailCard[]>([]);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function AllDecisionPage() {
           </button>
         </Element>
         <section>
-          <h2 className={style.titleH2}>Toutes Les décisions</h2>
+          <h2>Toutes les décisions auxquelles je participe</h2>
           <div className={style.cardsContainer}>
             {decisions.map((decision) => (
               <article key={decision.id}>

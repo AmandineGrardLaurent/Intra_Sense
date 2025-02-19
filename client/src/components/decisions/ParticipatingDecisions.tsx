@@ -7,7 +7,9 @@ export default function ParticipatingDecisions() {
   const [decisions, setDecisions] = useState<DecisionDetailCard[]>([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/participatingdecisions`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/participatingdecisions`, {
+      credentials: "include",
+    })
       .then((response) => response.json())
       .then((data) => {
         setDecisions(data);

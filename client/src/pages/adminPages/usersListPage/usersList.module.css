@@ -1,0 +1,26 @@
+.main {
+  padding: 3rem;
+}
+
+.userContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.titleH1 {
+  margin-top: 1em;
+  text-align: center;
+  color: var(--color-primary-active);
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.titleApplicants {
+  color: var(--color-tertiary-active);
+  text-decoration: none;
+}
+
+.titleUsers {
+  color: var(--color-primary-active);
+  text-decoration: none;
+}
