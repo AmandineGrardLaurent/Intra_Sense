@@ -120,7 +120,11 @@ export default function UserProfile() {
         },
       );
 
-      if (!response.ok) throw new Error("Erreur lors de la mise à jour");
+      if (response.ok) {
+        navigate("/");
+      } else {
+        console.error("Erreur lors de la modification");
+      }
 
       toast.success("Modifications prises en compte");
     } catch (error) {

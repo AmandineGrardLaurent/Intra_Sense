@@ -92,16 +92,23 @@ export default function AdminProfile() {
         avatar: data.avatar?.toLowerCase(),
         new_password: data.new_password,
       };
-
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/user`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/user/${user?.id}}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify(updatedData),
         },
-        body: JSON.stringify(updatedData),
-      });
+      );
 
-      if (!response.ok) throw new Error("Erreur lors de la mise à jour");
+      if (response.ok) {
+        navigate("/");
+      } else {
+        console.error("Erreur lors de la modification");
+      }
 
       toast.success("Modifications prises en compte");
     } catch (error) {
@@ -205,7 +212,7 @@ export default function AdminProfile() {
 
           <footer className={styles.buttonContainer}>
             <button type="submit" className={styles.saveButton}>
-              Enregistrer
+              Valider
             </button>
             <button
               type="button"

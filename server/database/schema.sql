@@ -100,3 +100,11 @@ FOREIGN KEY (decision_id) REFERENCES decision(id)
 
 INSERT INTO role (id,label) VALUES (1, 'applicant'), (2, 'user'), (3, 'administrator'), (4, 'rejected');
 INSERT INTO country (id,label) VALUES (1, 'France'), (2, 'Mexique'), (3, 'Canada'), (4, 'Pérou'), (5, 'Sénégal'), (6, 'Philippines'), (7, 'Liban'), (8, 'Cote d''Ivoire'), (9, 'Australie'), (10, 'Ukraine');
+
+INSERT INTO user (firstname,lastname,email,hash_password,avatar,country_id,role_id) 
+VALUES
+('Alice', 'Dupont', 'alice.dupont@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/26.jpg', 1, 2),
+('Bob', 'Martin', 'bob.martin@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/men/26.jpg', 2, 2),
+('Charlie', 'Durand', 'charlie.durand@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/23.jpg', 3, 1),
+('David', 'Lemoine', 'david.lemoine@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/men/26.jpg', 1, 1),
+('Emma', 'Morel', 'emma.morel@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/25.jpg', 2, 2);
