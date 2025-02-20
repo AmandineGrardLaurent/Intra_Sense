@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import style from "./NavBar.module.css";
 
 function NavBar() {
-  const navigate = useNavigate();
   const [isAdmin, setIsAdmin] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -39,27 +38,20 @@ function NavBar() {
     fetchUserRole();
   }, []);
 
-  const handleLogout = async () => {
-    try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/logout`, {
-        method: "POST",
-        credentials: "include",
-      });
-      if (response.ok) {
-        navigate("/");
-      } else {
-        console.error("Erreur lors de la déconnexion");
-      }
-    } catch (error) {
-      console.error("Erreur lors de la requiête de déconnexion:", error);
-    }
-  };
-
   return (
     <nav className={style.navContainer}>
-      <NavLink to={"/homepage"}>
-        <img src="/logo.png" alt="Logo img" className={style.logoImage} />
-      </NavLink>
+      <div className={style.logoButtonAdminGroup}>
+        <NavLink to={"/homepage"}>
+          <img src="/logo.png" alt="Logo img" className={style.logoImage} />
+        </NavLink>
+        <div>
+          {isAdmin && (
+            <NavLink to="/admin/profile">
+              <span className={style.adminButton}>Admin</span>
+            </NavLink>
+          )}
+        </div>
+      </div>
       <ul className={style.navBarLink}>
         <li>
           <button
@@ -104,7 +96,7 @@ function NavBar() {
         </li>
         <li>
           <button type="button" className={style.notificationButton}>
-            Notification
+            Notifications
           </button>
         </li>
         <li>
@@ -115,21 +107,6 @@ function NavBar() {
               className={style.profileImage}
             />
           </NavLink>
-        </li>
-        <li>
-          {isAdmin && (
-            <NavLink
-              to="/admin/profile"
-              className="flex items-center text-white hover:text-gray-200"
-            >
-              <span>Admin</span>
-            </NavLink>
-          )}
-        </li>
-        <li>
-          <button type="button" onClick={handleLogout}>
-            <span>Déconnexion</span>
-          </button>
         </li>
       </ul>
     </nav>

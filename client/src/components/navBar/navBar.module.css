@@ -14,8 +14,7 @@
 
 .logoImage {
   margin-top: 10px;
-  width: 70%;
-  height: 30%;
+  width: 15rem;
 }
 
 .navBarLink {
@@ -32,7 +31,8 @@
 }
 
 .dropdownButton,
-.notificationButton {
+.notificationButton,
+.adminButton {
   background-color: white;
   border: none;
   color: var(--color-primary-active);
@@ -67,6 +67,25 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.adminButton {
+  background-color: var(--color-secondary-active);
+  color: black;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.logoButtonAdminGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
 }
 
 /* MOBILE */

@@ -52,7 +52,7 @@ function CreateDecisionForm() {
       if (response.ok) {
         reset();
         navigate("/homepage");
-        toast.success("Décision envoyée à l'administrateur");
+        toast.success("Décision postée avec succès");
       } else {
         toast.error("Erreur lors de l'envoi de la décision");
       }

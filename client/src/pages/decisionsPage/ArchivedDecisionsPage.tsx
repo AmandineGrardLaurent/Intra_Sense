@@ -30,7 +30,7 @@ export default function ArchivedDecisionsPage() {
           </button>
         </Element>
         <section>
-          <h2>Toutes Les décisions archivées</h2>
+          <h2 className={style.titleH2}>Toutes Les décisions archivées</h2>
           <div className={style.cardsContainer}>
             {decisions.map((decision) => (
               <article key={decision.id}>

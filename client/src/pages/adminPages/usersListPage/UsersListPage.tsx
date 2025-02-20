@@ -22,26 +22,28 @@ export default function UsersListPage() {
   }, []);
 
   return (
-    <div className={style.main}>
+    <>
       <NavBar />
-      <h1 className={style.titleH1}>Administration des utilisateurs</h1>
+      <div className={style.main}>
+        <h1 className={style.titleH1}>Administration des utilisateurs</h1>
 
-      <section>
-        <h2 className={style.titleApplicants}>Liste des postulants</h2>
-        <article className={style.userContainer}>
-          {applicants.map((applicant) => (
-            <ApplicantsList user={applicant} key={applicant.id} />
-          ))}
-        </article>
-      </section>
-      <section>
-        <h2 className={style.titleUsers}>Liste des utilisateurs</h2>
-        <article className={style.userContainer}>
-          {users.map((user) => (
-            <UsersList user={user} key={user.id} />
-          ))}
-        </article>
-      </section>
-    </div>
+        <section className={style.container}>
+          <h2 className={style.titleApplicants}>Liste des postulants</h2>
+          <article className={style.userContainer}>
+            {applicants.map((applicant) => (
+              <ApplicantsList user={applicant} key={applicant.id} />
+            ))}
+          </article>
+        </section>
+        <section className={style.container}>
+          <h2 className={style.titleUsers}>Liste des utilisateurs</h2>
+          <article className={style.userContainer}>
+            {users.map((user) => (
+              <UsersList user={user} key={user.id} />
+            ))}
+          </article>
+        </section>
+      </div>
+    </>
   );
 }

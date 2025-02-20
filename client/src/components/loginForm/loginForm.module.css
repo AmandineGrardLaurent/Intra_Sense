@@ -60,11 +60,7 @@
 .containerButton {
   display: flex;
   justify-content: center;
-}
-
-.buttonSignup {
-  background-color: #0891b2;
-  color: white;
+  gap: 1rem;
 }
 
 .buttonLogin {
@@ -77,11 +73,28 @@
   cursor: pointer;
 }
 
-.buttonSignup:hover,
+.buttonRegister {
+  background-color: var(--color-primary-active);
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.buttonRegister:hover {
+  background-color: var(--color-tertiary-active);
+}
+
 .buttonLogin:hover {
   background-color: var(--color-primary-active);
 }
 
+.underscore {
+  color: var(--color-secondary-active);
+  font-weight: bolder;
+}
 .forgotPassword {
   display: block;
   text-align: left;

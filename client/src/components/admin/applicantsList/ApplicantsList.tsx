@@ -14,6 +14,7 @@ export default function ApplicantsList({ user }: { user: UserListType }) {
         },
         body: JSON.stringify(user),
       });
+      toast.success("Utilisateur accepté");
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");
     }
@@ -24,6 +25,7 @@ export default function ApplicantsList({ user }: { user: UserListType }) {
       fetch(`${import.meta.env.VITE_API_URL}/api/applicant/${userId}`, {
         method: "delete",
       });
+      toast.success("Utilisateur refusé");
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");
     }

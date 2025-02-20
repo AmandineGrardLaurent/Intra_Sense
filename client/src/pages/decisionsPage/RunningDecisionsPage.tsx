@@ -30,7 +30,7 @@ export default function RunningDecisionsPage() {
           </button>
         </Element>
         <section>
-          <h2>Toutes les décisions en cours</h2>
+          <h2 className={style.titleH2}>Toutes les décisions en cours</h2>
           <div className={style.cardsContainer}>
             {decisions.map((decision) => (
               <article key={decision.id}>

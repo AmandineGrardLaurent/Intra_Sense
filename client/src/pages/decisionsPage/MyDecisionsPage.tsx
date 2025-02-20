@@ -32,7 +32,7 @@ export default function MyDecisionsPage() {
           </button>
         </Element>
         <section>
-          <h2>Toutes mes décisions</h2>
+          <h2 className={style.titleH2}>Toutes mes décisions</h2>
           <div className={style.cardsContainer}>
             {decisions.map((decision) => (
               <article key={decision.id}>

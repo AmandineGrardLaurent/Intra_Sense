@@ -11,6 +11,7 @@ export default function UsersList({ user }: { user: UserListType }) {
       fetch(`${import.meta.env.VITE_API_URL}/api/user/${userId}`, {
         method: "delete",
       });
+      toast.success("Utilisateur supprimé");
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");
     }

@@ -32,7 +32,9 @@ export default function ParticipatingDecisionsPage() {
           </button>
         </Element>
         <section>
-          <h2>Toutes les décisions auxquelles je participe</h2>
+          <h2 className={style.titleH2}>
+            Toutes les décisions auxquelles je participe
+          </h2>
           <div className={style.cardsContainer}>
             {decisions.map((decision) => (
               <article key={decision.id}>

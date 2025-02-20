@@ -204,6 +204,9 @@ export default function AdminProfile() {
           </p>
 
           <footer className={styles.buttonContainer}>
+            <button type="submit" className={styles.saveButton}>
+              Enregistrer
+            </button>
             <button
               type="button"
               className={styles.backButton}
@@ -211,16 +214,14 @@ export default function AdminProfile() {
             >
               Retour à l'accueil
             </button>
-            <button type="submit" className={styles.saveButton}>
-              Enregistrer
-            </button>
+
+            <NavLink to="/admin/userslist">
+              <button type="button" className={styles.usersButton}>
+                Modérer les utilisateurs
+              </button>
+            </NavLink>
           </footer>
         </form>
-        <NavLink to="/admin/userslist">
-          <button type="button" className={styles.usersButton}>
-            Modérer les utilisateurs
-          </button>
-        </NavLink>
       </section>
     </main>
   );

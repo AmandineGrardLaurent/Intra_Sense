@@ -58,7 +58,7 @@ class DecisionRepository {
 
   async readAllDecisions() {
     const [rows] = await databaseClient.query<Rows>(
-      `SELECT decision.*, user.firstname, user.lastname, country.label AS country FROM decision 
+      `SELECT decision.*, user.avatar, user.firstname, user.lastname, country.label AS country FROM decision 
       INNER JOIN country ON country.id = decision.country_id 
       INNER JOIN user ON user.id = decision.user_id
       `,
@@ -68,7 +68,7 @@ class DecisionRepository {
 
   async readArchivedDecisions() {
     const [rows] = await databaseClient.query<Rows>(
-      `SELECT decision.*, user.firstname, user.lastname, country.label  AS country FROM decision 
+      `SELECT decision.*, user.avatar, user.firstname, user.lastname, country.label  AS country FROM decision 
       INNER JOIN country ON country.id = decision.country_id 
       INNER JOIN user ON user.id = decision.user_id
       WHERE decision.step="approved" OR decision.step="rejected"

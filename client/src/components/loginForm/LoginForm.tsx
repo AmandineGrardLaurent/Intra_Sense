@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import style from "./loginForm.module.css";
 
@@ -48,7 +48,9 @@ export default function LoginForm() {
   return (
     <section className={style.container}>
       <form onSubmit={handleSubmit(onSubmit)} className={style.card}>
-        <h1 className={style.title}>Connexion</h1>
+        <h1 className={style.title}>
+          Connexion sur Intra<span className={style.underscore}>_</span>Sense
+        </h1>
         <section>
           <label htmlFor="email" className={style.label}>
             Email
@@ -95,6 +97,11 @@ export default function LoginForm() {
             <button type="submit" className={style.buttonLogin}>
               Se connecter
             </button>
+            <NavLink to="/register">
+              <button type="submit" className={style.buttonRegister}>
+                S'inscrire
+              </button>
+            </NavLink>
           </div>
         </section>
       </form>
