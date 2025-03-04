@@ -21,8 +21,9 @@ function NavBar() {
           },
         );
 
-        if (!response.ok)
+        if (!response.ok) {
           throw new Error("Erreur lors de la récupération du rôle");
+        }
 
         const data = await response.json();
 

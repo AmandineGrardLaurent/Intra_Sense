@@ -196,7 +196,7 @@ const addUserByTokenEmail: RequestHandler = async (req, res, next) => {
       decodedToken?.email,
     );
     if (!user) {
-      res.status(404).json({ message: "toto" });
+      res.status(404).json({ message: "pas d'utilisateur valide" });
       return;
     }
 
@@ -235,9 +235,10 @@ const readRoleFromToken: RequestHandler = async (req, res, next) => {
         isAdmin: false,
         message: "Accès interdit. Tu n'es pas un admin",
       });
+      return;
     }
 
-    res.json({ isAdmin: true, message: "bienvenue admin" });
+    res.json({ isAdmin: true });
   } catch (err) {
     next(err);
   }
