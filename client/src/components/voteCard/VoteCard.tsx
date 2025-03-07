@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import againstImage from "../../assets/images/against.jpg";
 import forImage from "../../assets/images/for.jpg";
 import style from "./votreCard.module.css";
@@ -35,6 +36,9 @@ export default function VoteCard({ id }: { id: string }) {
         .then(() => {
           setHasVoted(true);
           setVote(value);
+          toast.success(
+            `Bravo ! Vous avez voté ${value ? "Pour" : "Contre"} 🎉`,
+          );
         })
         .catch((err) => console.error(err));
     } else {
@@ -48,6 +52,9 @@ export default function VoteCard({ id }: { id: string }) {
       })
         .then(() => {
           setVote(value);
+          toast.success(
+            `Bravo ! Vous avez voté ${value ? "Pour" : "Contre"} 🎉`,
+          );
         })
         .catch((err) => console.error(err));
     }
@@ -55,6 +62,9 @@ export default function VoteCard({ id }: { id: string }) {
 
   return (
     <div className={style.container}>
+      <h2 className={style.titleH2}>
+        Pour voter, cliquez sur l'un des boutons ci-dessous :{" "}
+      </h2>
       <div className={style.button}>
         <button
           type="button"

@@ -105,7 +105,7 @@ export default function AdminProfile() {
       );
 
       if (response.ok) {
-        navigate("/");
+        navigate("/homepage");
       } else {
         console.error("Erreur lors de la modification");
       }

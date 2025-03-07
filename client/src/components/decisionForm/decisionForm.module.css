@@ -30,6 +30,7 @@
 }
 
 .legend {
+  margin: auto;
   font-size: 1rem;
   color: var(--color-primary-active);
 }
