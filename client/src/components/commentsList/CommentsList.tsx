@@ -12,6 +12,11 @@ export default function CommentsList({ id }: { id: string }) {
       });
   }, [id]);
 
+  // useEffect(() => {
+  //   const newComment = [...comments];
+  //   onNewComment(newComment);
+  // }, [comments, onNewComment]);
+
   return (
     comments.length > 0 && (
       <div>

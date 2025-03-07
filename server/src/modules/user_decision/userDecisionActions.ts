@@ -13,8 +13,8 @@ const addUserDecisionAnimator: RequestHandler = async (req, res, next) => {
           role: "animator",
         };
         await userDecisionRepository.create(userDecision);
-        next();
       }
+      next();
     }
   } catch (err) {
     next(err);
@@ -43,17 +43,15 @@ const addUserDecisionExpert: RequestHandler = async (req, res, next) => {
 // pour créer tous les impactés dans la table user_decision
 const addUserDecisionImpacted: RequestHandler = async (req, res, next) => {
   try {
-    if (req.body.user_animator_id === 0) {
-      res.status(201).json("envoi ok");
-      return;
-    }
-    for (let i = 0; i < req.body.user_impacted_id.length; i++) {
-      const userDecision = {
-        decision_id: Number.parseInt(req.body.decision_id),
-        user_id: Number.parseInt(req.body.user_impacted_id[i]),
-        role: "impacted",
-      };
-      await userDecisionRepository.create(userDecision);
+    if (req.body.user_animator_id !== 0) {
+      for (let i = 0; i < req.body.user_impacted_id.length; i++) {
+        const userDecision = {
+          decision_id: Number.parseInt(req.body.decision_id),
+          user_id: Number.parseInt(req.body.user_impacted_id[i]),
+          role: "impacted",
+        };
+        await userDecisionRepository.create(userDecision);
+      }
     }
     res.status(201).json("envoi ok");
   } catch (err) {

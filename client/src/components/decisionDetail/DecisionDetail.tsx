@@ -4,6 +4,7 @@ import style from "./decisionDetail.module.css";
 
 export default function DecisionDetail({ id }: { id: string }) {
   const [decision, setDecision] = useState(null as null | DecisionDetailType);
+
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/decision/${id}`)
       .then((response) => response.json())
@@ -23,6 +24,10 @@ export default function DecisionDetail({ id }: { id: string }) {
               {decision.firstname} {decision.lastname}
             </span>
           </p>
+          <h2 className={style.titleDate}>
+            Date limite avant clotûre des votes :{" "}
+            {new Date(decision.min_date).toLocaleDateString("fr")}
+          </h2>
         </article>
         <article>
           <h2 className={style.titleH2}>

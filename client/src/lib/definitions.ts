@@ -31,7 +31,6 @@ type UserListType = {
 };
 
 // decision
-
 type DecisionDetailType = {
   id: number;
   title: string;
@@ -64,14 +63,12 @@ type DataFormDecisionType = {
 };
 
 // country
-
 type CountryType = {
   id: number;
   label: string;
 };
 
 // category
-
 type FormValuesCategory = {
   id: number;
   label: string;
@@ -87,8 +84,8 @@ type CategoryType = {
   label: string;
   color: string;
 };
-// comment
 
+// comment
 type CommentType = {
   content: string;
   firstname: string;
@@ -96,7 +93,6 @@ type CommentType = {
 };
 
 // profil
-
 type ProfileFormValues = {
   id: number;
   firstname: string;
@@ -160,4 +156,14 @@ type DataUserType = {
 type AdminType = {
   id: number;
   isAdmin: boolean;
+};
+
+// vote
+type VoteType = {
+  id: number;
+  state: number;
+  user_id: number;
+  decision_id: number;
+  firstname: string;
+  lastname: string;
 };

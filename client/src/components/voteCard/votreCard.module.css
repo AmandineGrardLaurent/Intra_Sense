@@ -1,0 +1,47 @@
+.buttonImage {
+  width: 3rem;
+  border: none;
+}
+
+.buttonFor,
+.buttonAgainst {
+  border: none;
+  background-color: white;
+  margin: 0.5rem;
+  opacity: 0.6;
+}
+
+.buttonImage:hover {
+  width: 3.3rem;
+}
+
+.buttonFor:disabled,
+.buttonAgainst:disabled {
+  opacity: 1;
+}
+
+.container {
+  margin: 1rem 0;
+  /* width: 15rem; */
+}
+
+.for {
+  color: green;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.against {
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.yourVote {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.button {
+  display: flex;
+  gap: 0.3rem;
+}

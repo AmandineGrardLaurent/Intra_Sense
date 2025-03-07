@@ -7,7 +7,9 @@ import PostCommentDecision from "../../components/postCommentDecision.ts/PostCom
 import UsersAnimatorsList from "../../components/users/usersAnimatorsList/UsersAnimatorsList";
 import UsersExpertList from "../../components/users/usersExpertList/UsersExpertList";
 import UsersImpactedtList from "../../components/users/usersImpactedList/UsersImpactedList";
+import VoteCard from "../../components/voteCard/VoteCard";
 import style from "./decisionDetailPage.module.css";
+import VoteCounter from "../../components/voteCounter/VoteCounter";
 
 export default function DecisionDetailPage() {
   const { id } = useParams<string>();
@@ -24,11 +26,13 @@ export default function DecisionDetailPage() {
           <Element name="top">
             <section className={style.detailsComments}>
               <DecisionDetail id={id} />
+              <VoteCard id={id} />
               <CommentsList id={id} />
               <PostCommentDecision id={id} />
             </section>
           </Element>
           <section className={style.users}>
+            <VoteCounter id={id} />
             <UsersAnimatorsList id={id} />
             <UsersExpertList id={id} />
             <UsersImpactedtList id={id} />

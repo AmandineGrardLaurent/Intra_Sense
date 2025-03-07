@@ -37,6 +37,14 @@
   }
 }
 
+.titleDate {
+  margin-top: 0.5rem;
+  /* color: var(--color-tertiary-active); */
+  color: black;
+  font-size: 1rem;
+  font-style: italic;
+}
+
 .paragraph {
   border: 1px solid rgb(199, 198, 198);
   border-radius: 0.5em;

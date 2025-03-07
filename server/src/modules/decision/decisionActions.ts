@@ -67,8 +67,6 @@ const read: RequestHandler = async (req, res, next) => {
 
 // Crée une décision et récupère l'id
 const addDecision: RequestHandler = async (req, res, next) => {
-  const { data = null } = req.body;
-
   try {
     const newDecision = {
       title: req.body.title,
@@ -82,13 +80,8 @@ const addDecision: RequestHandler = async (req, res, next) => {
       user_id: req.body.user_id,
     };
     const insertId = await decisionRepository.create(newDecision);
-
-    // if (!data) {
-    //   res.status(404);
-    // } else {
     req.body.decision_id = insertId;
     next();
-    // }
   } catch (err) {
     next(err);
   }

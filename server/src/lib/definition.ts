@@ -30,22 +30,30 @@ type NewUserType = {
   country_id: string;
 };
 
+// country
 type Country = {
   id: number;
   label: string;
 };
 
+// category
 type Category = {
   id: number;
   label: string;
   color: string;
 };
 
-type Vote = {
+// vote
+type VoteType = {
   id: number;
-  comment: string;
   state: boolean;
-  user_id: string;
+  user_id: number;
+  decision_id: number;
+};
+
+type VoteDecisionType = {
+  user_id: number;
+  decision_id: number;
 };
 
 // comment
@@ -56,7 +64,6 @@ type CommentType = {
 };
 
 // token
-
 type DecodedTokenType = {
   email: string;
   iat: number;

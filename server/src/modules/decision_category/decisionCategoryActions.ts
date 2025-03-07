@@ -11,8 +11,7 @@ const addDecisionCategory: RequestHandler = async (req, res, next) => {
           decision_id: Number.parseInt(req.body.decision_id),
           category_id: Number.parseInt(req.body.category_id[i]),
         };
-        const insertId =
-          await decisionCategoryRepository.create(decisionCategory);
+        await decisionCategoryRepository.create(decisionCategory);
       }
       next();
     }
