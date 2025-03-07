@@ -121,7 +121,7 @@ export default function UserProfile() {
       );
 
       if (response.ok) {
-        navigate("/");
+        navigate("/homepage");
       } else {
         console.error("Erreur lors de la modification");
       }
