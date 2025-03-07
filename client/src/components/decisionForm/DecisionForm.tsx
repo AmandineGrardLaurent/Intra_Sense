@@ -47,7 +47,7 @@ function CreateDecisionForm() {
           },
           credentials: "include",
           body: JSON.stringify(data),
-        }
+        },
       );
       if (response.ok) {
         reset();

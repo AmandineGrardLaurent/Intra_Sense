@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import style from "./voteCounter.module.css";
-import forImage from "../../assets/images/for.jpg";
 import againstImage from "../../assets/images/against.jpg";
+import forImage from "../../assets/images/for.jpg";
+import style from "./voteCounter.module.css";
 
 export default function VoteCounter({ id }: { id: string }) {
   const [voteFor, setVoteFor] = useState(0);

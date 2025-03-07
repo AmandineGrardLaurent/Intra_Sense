@@ -8,8 +8,8 @@ import UsersAnimatorsList from "../../components/users/usersAnimatorsList/UsersA
 import UsersExpertList from "../../components/users/usersExpertList/UsersExpertList";
 import UsersImpactedtList from "../../components/users/usersImpactedList/UsersImpactedList";
 import VoteCard from "../../components/voteCard/VoteCard";
-import style from "./decisionDetailPage.module.css";
 import VoteCounter from "../../components/voteCounter/VoteCounter";
+import style from "./decisionDetailPage.module.css";
 
 export default function DecisionDetailPage() {
   const { id } = useParams<string>();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import style from "./votreCard.module.css";
-import forImage from "../../assets/images/for.jpg";
 import againstImage from "../../assets/images/against.jpg";
+import forImage from "../../assets/images/for.jpg";
+import style from "./votreCard.module.css";
 
 export default function VoteCard({ id }: { id: string }) {
   const [hasVoted, setHasVoted] = useState(false);
