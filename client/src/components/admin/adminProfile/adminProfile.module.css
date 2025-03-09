@@ -200,4 +200,12 @@
   .field {
     margin-bottom: 1rem;
   }
+
+  .buttonContainer {
+    flex-direction: column;
+  }
+
+  .usersButton {
+    width: 100%;
+  }
 }

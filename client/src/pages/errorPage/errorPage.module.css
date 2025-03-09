@@ -40,6 +40,10 @@
   margin: 0 2em 2em 0;
 }
 
+.buttonContactUs:hover {
+  background-color: rgb(6, 95, 120);
+}
+
 .buttonHomePage {
   width: 10rem;
   height: 2em;
@@ -48,6 +52,10 @@
   border: 0;
   font-size: 1em;
   margin: 0 2em 2em 0;
+}
+
+.buttonHomePage:hover {
+  background-color: #7a073e;
 }
 
 a {

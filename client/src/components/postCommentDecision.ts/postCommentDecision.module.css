@@ -38,3 +38,7 @@
     font-size: 0.8em;
   }
 }
+
+.button:hover {
+  background-color: rgb(6, 95, 120);
+}

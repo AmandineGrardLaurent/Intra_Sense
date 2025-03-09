@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Element, Link } from "react-scroll";
 import ApplicantsList from "../../../components/admin/applicantsList/ApplicantsList";
 import UsersList from "../../../components/admin/usersList/UsersList";
 import NavBar from "../../../components/navBar/NavBar";
@@ -23,10 +24,11 @@ export default function UsersListPage() {
 
   return (
     <>
-      <NavBar />
-      <div className={style.main}>
+      <Element name="top">
+        <NavBar />
+      </Element>
+      <main className={style.main}>
         <h1 className={style.titleH1}>Administration des utilisateurs</h1>
-
         <section className={style.container}>
           <h2 className={style.titleApplicants}>Liste des postulants</h2>
           <article className={style.userContainer}>
@@ -43,7 +45,15 @@ export default function UsersListPage() {
             ))}
           </article>
         </section>
-      </div>
+        <Link
+          to="top"
+          smooth={true}
+          duration={500}
+          className={style.buttonScrollToTop}
+        >
+          Revenir en haut
+        </Link>
+      </main>
     </>
   );
 }

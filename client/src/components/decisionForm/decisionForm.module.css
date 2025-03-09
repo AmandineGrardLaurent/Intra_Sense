@@ -16,7 +16,7 @@
 }
 
 .logo {
-  margin: 1em;
+  display: flex;
   width: 20%;
 }
 
@@ -65,10 +65,10 @@
   border-radius: 1rem;
   font-size: 1rem;
   cursor: pointer;
-  @media screen and (max-width: 768px) {
-    width: 60%;
-    font-size: 0.8em;
-  }
+}
+
+.canceldButton:hover {
+  background-color: rgb(6, 95, 120);
 }
 
 .addDecisionButton {
@@ -79,10 +79,9 @@
   border-radius: 1rem;
   font-size: 1rem;
   cursor: pointer;
-  @media screen and (max-width: 768px) {
-    width: 60%;
-    font-size: 0.8em;
-  }
+}
+.addDecisionButton:hover {
+  background-color: #7a073e;
 }
 
 .decisionContainer {
@@ -115,7 +114,7 @@
   }
 
   .logo {
-    margin: 1em;
+    margin: 1rem auto;
     width: 50%;
   }
 
@@ -144,5 +143,17 @@
 
   .users {
     flex-direction: column;
+  }
+
+  .canceldButton {
+    font-size: 0.8em;
+  }
+
+  .addDecisionButton {
+    font-size: 0.8em;
+  }
+
+  .buttongroup {
+    gap: 1rem;
   }
 }

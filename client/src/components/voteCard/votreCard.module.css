@@ -20,9 +20,24 @@
   opacity: 1;
 }
 
+.titleH2 {
+  margin-bottom: 0.4em;
+  color: var(--color-tertiary-active);
+  font-weight: normal;
+  font-size: 2em;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1em;
+  }
+}
+
 .container {
   margin: 1rem 0;
-  /* width: 15rem; */
+  @media screen and (max-width: 768px) {
+    margin: 0.5em 1.25em;
+    gap: 1.25em;
+  }
 }
 
 .for {
@@ -39,9 +54,18 @@
 .yourVote {
   display: flex;
   gap: 0.4rem;
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
+    justify-content: center;
+  }
 }
 
 .button {
   display: flex;
   gap: 0.3rem;
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+  }
 }

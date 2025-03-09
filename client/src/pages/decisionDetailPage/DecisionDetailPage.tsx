@@ -20,17 +20,18 @@ export default function DecisionDetailPage() {
 
   return (
     <>
-      <NavBar />
+      <Element name="top">
+        <NavBar />
+      </Element>
       <main className={style.page}>
         <section className={style.container}>
-          <Element name="top">
-            <section className={style.detailsComments}>
-              <DecisionDetail id={id} />
-              <VoteCard id={id} />
-              <CommentsList id={id} />
-              <PostCommentDecision id={id} />
-            </section>
-          </Element>
+          <section className={style.detailsComments}>
+            <DecisionDetail id={id} />
+            <VoteCard id={id} />
+            <CommentsList id={id} />
+            <PostCommentDecision id={id} />
+          </section>
+
           <section className={style.users}>
             <VoteCounter id={id} />
             <UsersAnimatorsList id={id} />

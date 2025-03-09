@@ -39,10 +39,12 @@
 
 .titleDate {
   margin-top: 0.5rem;
-  /* color: var(--color-tertiary-active); */
   color: black;
   font-size: 1rem;
   font-style: italic;
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
+  }
 }
 
 .paragraph {
