@@ -1,7 +1,6 @@
 import DatabaseClient from "../../../database/client";
 import type { Result, Rows } from "../../../database/client";
 
-//CREATE vote
 class VoteRepository {
   async create(vote: Omit<VoteType, "id">) {
     const [result] = await DatabaseClient.query<Result>(

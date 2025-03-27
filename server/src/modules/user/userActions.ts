@@ -193,9 +193,7 @@ const addUserByTokenEmail: RequestHandler = async (req, res, next) => {
       return;
     }
 
-    const user = await userRepository.readByEmailForComment(
-      decodedToken?.email,
-    );
+    const user = await userRepository.readByEmailForToken(decodedToken?.email);
 
     if (!user) {
       res.status(404).json({ message: "pas d'utilisateur valide" });

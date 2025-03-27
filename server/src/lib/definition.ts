@@ -75,3 +75,29 @@ type PayloadType = {
   iat: number;
   exp: number;
 };
+
+// decision
+type Decision = {
+  title: string;
+  country_id: number;
+  description: string;
+  max_date: Date;
+  min_date: Date;
+  context: string;
+  profit: string;
+  risk: string;
+  user_id: number;
+};
+
+type DecisionCard = {
+  title: string;
+  firstname: string;
+  lastname: string;
+  category: string;
+  country: string;
+};
+
+type DecisionCategoryType = {
+  decision_id: number;
+  category_id: number;
+};

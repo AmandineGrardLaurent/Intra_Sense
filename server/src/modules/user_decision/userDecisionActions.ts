@@ -53,7 +53,7 @@ const addUserDecisionImpacted: RequestHandler = async (req, res, next) => {
         await userDecisionRepository.create(userDecision);
       }
     }
-    res.status(201).json("envoi ok");
+    res.status(201).json("Ajout réussi");
   } catch (err) {
     next(err);
   }

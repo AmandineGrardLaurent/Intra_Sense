@@ -1,11 +1,6 @@
 import databaseClient from "../../../database/client";
 import type { Result } from "../../../database/client";
 
-type DecisionCategoryType = {
-  decision_id: number;
-  category_id: number;
-};
-
 class DecisionCategoryRepository {
   async create(decisionCategory: DecisionCategoryType) {
     const [result] = await databaseClient.query<Result>(

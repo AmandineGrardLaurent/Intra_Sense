@@ -1,5 +1,4 @@
 import type { RequestHandler } from "express";
-import { string } from "joi";
 import {
   hashModifiedPasswordHelper,
   hashPasswordHelper,

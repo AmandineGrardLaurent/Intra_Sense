@@ -93,7 +93,7 @@ class UserRepository {
     return result.length > 0 ? result[0] : null;
   }
 
-  async readByEmailForComment(
+  async readByEmailForToken(
     email: string,
   ): Promise<{ user_id: number } | null> {
     const [user] = await databaseClient.query<Rows>(
