@@ -38,9 +38,9 @@ export default function ApplicantsList({ user }: { user: UserListType }) {
         <div className={style.name}>
           {user.firstname} {user.lastname}
         </div>
-        <div>
+        <p className={style.dateText}>
           Inscrit le {new Date(user.created_at).toLocaleDateString("fr")}
-        </div>
+        </p>
         <div className={style.buttonGroup}>
           <form onSubmit={handleSubmit(onAccept)}>
             <button type="submit" className={style.buttonAccepted}>

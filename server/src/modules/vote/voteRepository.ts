@@ -1,40 +1,56 @@
 import DatabaseClient from "../../../database/client";
 import type { Result, Rows } from "../../../database/client";
 
-//CREATE vote
 class VoteRepository {
-  async create(vote: Omit<Vote, "id">) {
+  async create(vote: Omit<VoteType, "id">) {
     const [result] = await DatabaseClient.query<Result>(
-      " INSERT INTO vote (comment, state, user_id) VALUES (?,?,?)",
-      [vote.comment, vote.state, vote.user_id],
+      " INSERT INTO vote (decision_id, state, user_id) VALUES (?,?,?)",
+      [vote.decision_id, vote.state, vote.user_id],
     );
     return result.insertId;
   }
 
-  //READ & READ ALL vote
-  async read(id: number) {
+  // READ vote
+  async read(voteData: VoteDecisionType) {
     const [rows] = await DatabaseClient.query<Rows>(
-      "SELECT vote.comment, vote.state, user.firstname, user.lastname FROM vote JOIN user ON user.id=vote.user_id WHERE vote.id = ?",
-      [id],
+      `SELECT vote.*, user.firstname, user.lastname, decision.id 
+        FROM vote
+        JOIN user ON user.id=vote.user_id 
+        JOIN decision ON decision_id = vote.decision_id
+        WHERE vote.decision_id = ? 
+        AND vote.user_id = ?`,
+      [voteData.decision_id, voteData.user_id],
     );
-    return rows[0] as Vote;
+    if (rows.length === 0) return null;
+    return rows[0] as VoteType;
   }
 
-  async readAll() {
-    const [rows] = await DatabaseClient.query<Rows>("SELECT * FROM vote");
-    return rows as Vote[];
+  // READ vote For
+  async readAllFor(decisionId: number) {
+    const [rows] = await DatabaseClient.query<Rows>(
+      "SELECT COUNT(*) AS VoteFor FROM vote WHERE decision_id = ? AND state = 1",
+      [decisionId],
+    );
+    return rows;
+  }
+
+  // READ vote Against
+  async readAllAgainst(decisionId: number) {
+    const [rows] = await DatabaseClient.query<Rows>(
+      "SELECT COUNT(*) AS VoteAgainst FROM vote WHERE decision_id = ? AND state = 0",
+      [decisionId],
+    );
+    return rows;
   }
 
   //UPDATE vote
-  async update(vote: Vote) {
+  async update(vote: Omit<VoteType, "id">) {
     const [result] = await DatabaseClient.query<Result>(
-      "UPDATE vote SET comment = ?, state = ? WHERE id = ?",
-      [vote.comment, vote.state, vote.id],
+      "UPDATE vote SET state = ? WHERE decision_id = ? AND user_id = ?",
+      [vote.state, vote.decision_id, vote.user_id],
     );
     return result.affectedRows;
   }
 }
-
-//pas DELETE vote X
 
 export default new VoteRepository();

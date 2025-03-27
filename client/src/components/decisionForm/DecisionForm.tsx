@@ -63,7 +63,7 @@ function CreateDecisionForm() {
 
   return (
     <section className={style.decisionContainer}>
-      <section className={style.logo_exit}>
+      <section>
         <NavLink to={"/homepage"}>
           <img src="/intrasenselogo.png" alt="logo" className={style.logo} />
         </NavLink>

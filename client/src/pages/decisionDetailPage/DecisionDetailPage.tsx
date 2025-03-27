@@ -7,6 +7,8 @@ import PostCommentDecision from "../../components/postCommentDecision.ts/PostCom
 import UsersAnimatorsList from "../../components/users/usersAnimatorsList/UsersAnimatorsList";
 import UsersExpertList from "../../components/users/usersExpertList/UsersExpertList";
 import UsersImpactedtList from "../../components/users/usersImpactedList/UsersImpactedList";
+import VoteCard from "../../components/voteCard/VoteCard";
+import VoteCounter from "../../components/voteCounter/VoteCounter";
 import style from "./decisionDetailPage.module.css";
 
 export default function DecisionDetailPage() {
@@ -18,17 +20,20 @@ export default function DecisionDetailPage() {
 
   return (
     <>
-      <NavBar />
+      <Element name="top">
+        <NavBar />
+      </Element>
       <main className={style.page}>
         <section className={style.container}>
-          <Element name="top">
-            <section className={style.detailsComments}>
-              <DecisionDetail id={id} />
-              <CommentsList id={id} />
-              <PostCommentDecision id={id} />
-            </section>
-          </Element>
+          <section className={style.detailsComments}>
+            <DecisionDetail id={id} />
+            <VoteCard id={id} />
+            <CommentsList id={id} />
+            <PostCommentDecision id={id} />
+          </section>
+
           <section className={style.users}>
+            <VoteCounter id={id} />
             <UsersAnimatorsList id={id} />
             <UsersExpertList id={id} />
             <UsersImpactedtList id={id} />

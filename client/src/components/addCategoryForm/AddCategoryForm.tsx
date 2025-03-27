@@ -31,7 +31,7 @@ function AddCategoryForm() {
 
   return (
     <section className={style.container}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
         <label htmlFor="label" className={style.label}>
           Ajoutez une nouvelle catégorie :
           <input

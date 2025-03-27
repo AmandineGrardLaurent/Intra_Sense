@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import style from "./createUserForm.module.css";
 
@@ -201,6 +201,11 @@ export default function CreateUserForm() {
             <button type="submit" className={style.buttonCreateUser}>
               Envoyer ma demande
             </button>
+            <NavLink to="/">
+              <button type="submit" className={style.buttonLogin}>
+                Se connecter
+              </button>
+            </NavLink>
           </div>
         </section>
       </form>

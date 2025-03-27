@@ -105,7 +105,7 @@ export default function AdminProfile() {
       );
 
       if (response.ok) {
-        navigate("/");
+        navigate("/homepage");
       } else {
         console.error("Erreur lors de la modification");
       }
@@ -180,7 +180,9 @@ export default function AdminProfile() {
                   value={password}
                   {...register("new_password")}
                   onChange={handlePasswordChange}
-                  className={`${styles.input} ${passwordError ? styles.inputError : ""}`}
+                  className={`${styles.input} ${
+                    passwordError ? styles.inputError : ""
+                  }`}
                   placeholder="Cliquez pour modifier"
                 />
                 {passwordError && (
@@ -195,7 +197,9 @@ export default function AdminProfile() {
                   type="password"
                   value={confirmPassword}
                   onChange={handleConfirmPasswordChange}
-                  className={`${styles.input} ${confirmError ? styles.inputError : ""}`}
+                  className={`${styles.input} ${
+                    confirmError ? styles.inputError : ""
+                  }`}
                   placeholder="Confirmer le nouveau mot de passe"
                 />
                 {confirmError && (
@@ -222,7 +226,7 @@ export default function AdminProfile() {
               Retour à l'accueil
             </button>
 
-            <NavLink to="/admin/userslist">
+            <NavLink to="/admin/userslist" className={styles.link}>
               <button type="button" className={styles.usersButton}>
                 Modérer les utilisateurs
               </button>

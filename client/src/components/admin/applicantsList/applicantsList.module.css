@@ -12,17 +12,19 @@
   width: 12rem;
   height: 100%;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    gap: 0.1rem;
+    width: 7rem;
+  }
 }
 
 .avatar {
   width: 8rem;
   border-radius: 50%;
-}
-
-.buttonGroup {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    height: 60%;
+  }
 }
 
 .name {
@@ -30,8 +32,27 @@
   text-align: center;
   color: var(--color-tertiary-active);
   font-weight: 600;
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 }
 
+.dateText {
+  @media screen and (max-width: 768px) {
+    font-size: 0.6rem;
+    text-align: center;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    gap: 0.3rem;
+  }
+}
 .buttonAccepted {
   background-color: var(--color-primary-active);
 }
@@ -46,4 +67,8 @@
   padding: 0.4rem;
   border-radius: 0.5rem;
   border: 0;
+  @media screen and (max-width: 768px) {
+    font-size: 0.55rem;
+    padding: 0.25rem;
+  }
 }

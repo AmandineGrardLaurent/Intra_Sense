@@ -24,9 +24,9 @@ export default function UsersList({ user }: { user: UserListType }) {
         <div className={style.name}>
           {user.firstname} {user.lastname}
         </div>
-        <div>
+        <p className={style.dateText}>
           Inscrit le {new Date(user.created_at).toLocaleDateString("fr")}
-        </div>
+        </p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <button type="submit" className={style.buttonRefused}>
             Supprimer

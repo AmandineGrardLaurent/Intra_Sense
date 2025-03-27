@@ -1,26 +1,6 @@
 import databaseClient from "../../../database/client";
 import type { Result, Rows } from "../../../database/client";
 
-type Decision = {
-  title: string;
-  country_id: number;
-  description: string;
-  max_date: Date;
-  min_date: Date;
-  context: string;
-  profit: string;
-  risk: string;
-  user_id: number;
-};
-
-type DecisionCard = {
-  title: string;
-  firstname: string;
-  lastname: string;
-  category: string;
-  country: string;
-};
-
 class DecisionRepository {
   async create(decision: Decision) {
     const [result] = await databaseClient.query<Result>(

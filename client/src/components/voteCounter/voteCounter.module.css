@@ -1,0 +1,32 @@
+.vote {
+  width: 3rem;
+}
+.containerVote {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.titleH2 {
+  color: var(--color-primary-active);
+  font-size: 1.25rem;
+  border: 1px solid rgb(199, 198, 198);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.counterCard {
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid rgb(199, 198, 198);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+}
+.text {
+  font: var("raleway");
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}

@@ -30,22 +30,30 @@ type NewUserType = {
   country_id: string;
 };
 
+// country
 type Country = {
   id: number;
   label: string;
 };
 
+// category
 type Category = {
   id: number;
   label: string;
   color: string;
 };
 
-type Vote = {
+// vote
+type VoteType = {
   id: number;
-  comment: string;
   state: boolean;
-  user_id: string;
+  user_id: number;
+  decision_id: number;
+};
+
+type VoteDecisionType = {
+  user_id: number;
+  decision_id: number;
 };
 
 // comment
@@ -56,7 +64,6 @@ type CommentType = {
 };
 
 // token
-
 type DecodedTokenType = {
   email: string;
   iat: number;
@@ -67,4 +74,31 @@ type PayloadType = {
   email: string;
   iat: number;
   exp: number;
+};
+
+// decision
+
+type Decision = {
+  title: string;
+  country_id: number;
+  description: string;
+  max_date: Date;
+  min_date: Date;
+  context: string;
+  profit: string;
+  risk: string;
+  user_id: number;
+};
+
+type DecisionCard = {
+  title: string;
+  firstname: string;
+  lastname: string;
+  category: string;
+  country: string;
+};
+
+type DecisionCategoryType = {
+  decision_id: number;
+  category_id: number;
 };

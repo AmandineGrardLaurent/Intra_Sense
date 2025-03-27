@@ -12,11 +12,19 @@
   width: 12rem;
   height: 100%;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    gap: 0.1rem;
+    width: 7rem;
+  }
 }
 
 .avatar {
   width: 8rem;
   border-radius: 50%;
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    height: 60%;
+  }
 }
 
 .name {
@@ -24,6 +32,16 @@
   text-align: center;
   color: var(--color-primary-active);
   font-weight: 600;
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+}
+
+.dateText {
+  @media screen and (max-width: 768px) {
+    font-size: 0.6rem;
+    text-align: center;
+  }
 }
 
 .buttonRefused {
@@ -32,4 +50,8 @@
   border-radius: 0.5rem;
   border: 0;
   background-color: var(--color-tertiary-active);
+  @media screen and (max-width: 768px) {
+    font-size: 0.55rem;
+    padding: 0.25rem;
+  }
 }
