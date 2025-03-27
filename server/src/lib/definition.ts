@@ -77,6 +77,7 @@ type PayloadType = {
 };
 
 // decision
+
 type Decision = {
   title: string;
   country_id: number;
