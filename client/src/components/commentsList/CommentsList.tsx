@@ -1,16 +1,23 @@
 import { useEffect, useState } from "react";
 import style from "./commentsList.module.css";
 
-export default function CommentsList({ id }: { id: string }) {
+export default function CommentsList({
+  id,
+  refresh,
+}: {
+  id: string;
+  refresh: boolean;
+}) {
   const [comments, setComments] = useState<CommentType[]>([]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/decision/comment/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setComments(data);
       });
-  }, [id]);
+  }, [id, refresh]);
 
   return (
     comments.length > 0 && (

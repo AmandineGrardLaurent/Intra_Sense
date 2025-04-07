@@ -197,6 +197,7 @@ export default function CreateUserForm() {
               {...register("avatar", { required: "champ obligatoire" })}
             />
           </label>
+          <span className={style.errorText}>{errors.avatar?.message}</span>
           <div className={style.containerButton}>
             <button type="submit" className={style.buttonCreateUser}>
               Envoyer ma demande

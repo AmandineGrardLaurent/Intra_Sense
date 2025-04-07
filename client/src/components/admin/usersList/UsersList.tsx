@@ -2,7 +2,13 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import style from "./usersList.module.css";
 
-export default function UsersList({ user }: { user: UserListType }) {
+export default function UsersList({
+  user,
+  onChange,
+}: {
+  user: UserListType;
+  onChange: () => void;
+}) {
   const { handleSubmit } = useForm();
   const userId = user.id;
 
@@ -11,6 +17,7 @@ export default function UsersList({ user }: { user: UserListType }) {
       fetch(`${import.meta.env.VITE_API_URL}/api/user/${userId}`, {
         method: "delete",
       });
+      onChange();
       toast.success("Utilisateur supprimé");
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");

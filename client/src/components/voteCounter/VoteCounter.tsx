@@ -3,10 +3,17 @@ import againstImage from "../../assets/images/against.jpg";
 import forImage from "../../assets/images/for.jpg";
 import style from "./voteCounter.module.css";
 
-export default function VoteCounter({ id }: { id: string }) {
+export default function VoteCounter({
+  id,
+  refresh,
+}: {
+  id: string;
+  refresh: boolean;
+}) {
   const [voteFor, setVoteFor] = useState(0);
   const [voteAgainst, setVoteAgainst] = useState(0);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/decision/votefor/${id}`, {
       credentials: "include",
@@ -25,7 +32,7 @@ export default function VoteCounter({ id }: { id: string }) {
         setVoteAgainst(data[0].VoteAgainst);
       })
       .catch((err) => console.error(err));
-  }, [id]);
+  }, [id, refresh]);
 
   return (
     <section className={style.counterCard}>

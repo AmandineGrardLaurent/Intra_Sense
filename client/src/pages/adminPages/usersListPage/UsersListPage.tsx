@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Element, Link } from "react-scroll";
 import ApplicantsList from "../../../components/admin/applicantsList/ApplicantsList";
 import UsersList from "../../../components/admin/usersList/UsersList";
@@ -8,7 +8,13 @@ import style from "./usersList.module.css";
 export default function UsersListPage() {
   const [users, setUsers] = useState<UserListType[]>([]);
   const [applicants, setApplicants] = useState<UserListType[]>([]);
+  const [refresh, setRefresh] = useState(false);
 
+  const triggerRefresh = useCallback(() => {
+    setRefresh((prev) => !prev);
+  }, []);
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/accepted`)
       .then((response) => response.json())
@@ -20,7 +26,7 @@ export default function UsersListPage() {
       .then((data) => {
         setApplicants(data);
       });
-  }, []);
+  }, [refresh]);
 
   return (
     <>
@@ -34,7 +40,11 @@ export default function UsersListPage() {
             <h2 className={style.titleApplicants}>Liste des postulants</h2>
             <article className={style.userContainer}>
               {applicants.map((applicant) => (
-                <ApplicantsList user={applicant} key={applicant.id} />
+                <ApplicantsList
+                  user={applicant}
+                  key={applicant.id}
+                  onChange={triggerRefresh}
+                />
               ))}
             </article>
           </section>
@@ -44,7 +54,11 @@ export default function UsersListPage() {
             <h2 className={style.titleUsers}>Liste des utilisateurs</h2>
             <article className={style.userContainer}>
               {users.map((user) => (
-                <UsersList user={user} key={user.id} />
+                <UsersList
+                  user={user}
+                  key={user.id}
+                  onChange={triggerRefresh}
+                />
               ))}
             </article>
           </section>
