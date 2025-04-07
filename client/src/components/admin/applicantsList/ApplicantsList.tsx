@@ -2,7 +2,13 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import style from "./applicantsList.module.css";
 
-export default function ApplicantsList({ user }: { user: UserListType }) {
+export default function ApplicantsList({
+  user,
+  onChange,
+}: {
+  user: UserListType;
+  onChange: () => void;
+}) {
   const { handleSubmit } = useForm<UserListType>();
   const userId = user.id;
   const onAccept = async (user: UserListType) => {
@@ -15,6 +21,7 @@ export default function ApplicantsList({ user }: { user: UserListType }) {
         body: JSON.stringify(user),
       });
       toast.success("Utilisateur accepté");
+      onChange();
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");
     }
@@ -26,6 +33,7 @@ export default function ApplicantsList({ user }: { user: UserListType }) {
         method: "delete",
       });
       toast.success("Utilisateur refusé");
+      onChange();
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");
     }
