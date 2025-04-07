@@ -4,7 +4,13 @@ import againstImage from "../../assets/images/against.jpg";
 import forImage from "../../assets/images/for.jpg";
 import style from "./votreCard.module.css";
 
-export default function VoteCard({ id }: { id: string }) {
+export default function VoteCard({
+  id,
+  onVote,
+}: {
+  id: string;
+  onVote: () => void;
+}) {
   const [hasVoted, setHasVoted] = useState(false);
   const [vote, setVote] = useState<boolean | null>(null);
 
@@ -39,6 +45,7 @@ export default function VoteCard({ id }: { id: string }) {
           toast.success(
             `Bravo ! Vous avez voté ${value ? "Pour" : "Contre"} 🎉`,
           );
+          onVote();
         })
         .catch((err) => console.error(err));
     } else {
@@ -55,6 +62,7 @@ export default function VoteCard({ id }: { id: string }) {
           toast.success(
             `Bravo ! Vous avez voté ${value ? "Pour" : "Contre"} 🎉`,
           );
+          onVote();
         })
         .catch((err) => console.error(err));
     }
