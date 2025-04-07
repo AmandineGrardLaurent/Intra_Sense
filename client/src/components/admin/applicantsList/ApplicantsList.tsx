@@ -29,7 +29,7 @@ export default function ApplicantsList({
 
   const onRefused = async () => {
     try {
-      fetch(`${import.meta.env.VITE_API_URL}/api/applicant/${userId}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/applicant/${userId}`, {
         method: "delete",
       });
       toast.success("Utilisateur refusé");
