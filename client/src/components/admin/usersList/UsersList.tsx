@@ -14,7 +14,7 @@ export default function UsersList({
 
   const onSubmit = async () => {
     try {
-      fetch(`${import.meta.env.VITE_API_URL}/api/user/${userId}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/user/${userId}`, {
         method: "delete",
       });
       onChange();
