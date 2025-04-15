@@ -25,7 +25,10 @@ export default function UsersExpertList({ id }: { id: string }) {
                   alt={expert.lastname}
                   className={style.avatar}
                 />
-                <p>{expert.firstname}</p>
+                <p>
+                  {expert.firstname.charAt(0).toUpperCase() +
+                    expert.firstname.slice(1)}
+                </p>
               </article>
             ))}
           </div>

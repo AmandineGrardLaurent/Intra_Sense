@@ -35,8 +35,8 @@ import RegisterPage from "./pages/registerPage/RegisterPage";
 
 const router = createBrowserRouter([
   {
-    path: "/", // The root path
-    element: <App />, // Renders the App component for the home page
+    path: "/",
+    element: <App />,
     children: [
       {
         path: "/register",

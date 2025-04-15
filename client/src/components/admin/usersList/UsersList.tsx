@@ -29,7 +29,8 @@ export default function UsersList({
       <article key={user.id} className={style.userCard}>
         <img src={user.avatar} alt={user.lastname} className={style.avatar} />
         <div className={style.name}>
-          {user.firstname} {user.lastname}
+          {user.firstname.charAt(0).toUpperCase() + user.firstname.slice(1)}{" "}
+          {user.lastname.charAt(0).toUpperCase() + user.lastname.slice(1)}
         </div>
         <p className={style.dateText}>
           Inscrit le {new Date(user.created_at).toLocaleDateString("fr")}
