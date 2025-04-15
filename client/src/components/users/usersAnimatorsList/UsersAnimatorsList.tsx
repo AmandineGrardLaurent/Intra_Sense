@@ -24,7 +24,10 @@ export default function UsersAnimatorsList({ id }: { id: string }) {
                   alt={animator.lastname}
                   className={style.avatar}
                 />
-                <p>{animator.firstname}</p>
+                <p>
+                  {animator.firstname.charAt(0).toUpperCase() +
+                    animator.firstname.slice(1)}
+                </p>
               </article>
             ))}
           </div>

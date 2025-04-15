@@ -25,7 +25,10 @@ export default function UsersImpactedtList({ id }: { id: string }) {
                   alt={impacted.lastname}
                   className={style.avatar}
                 />
-                <p>{impacted.firstname}</p>
+                <p>
+                  {impacted.firstname.charAt(0).toUpperCase() +
+                    impacted.firstname.slice(1)}
+                </p>
               </article>
             ))}
           </div>

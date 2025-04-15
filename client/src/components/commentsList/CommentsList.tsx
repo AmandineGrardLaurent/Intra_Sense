@@ -27,7 +27,10 @@ export default function CommentsList({
           {comments.map((comment) => (
             <article key={comment.content} className={style.comment}>
               <p className={style.name}>
-                {comment.firstname} {comment.lastname}
+                {comment.firstname.charAt(0).toUpperCase() +
+                  comment.firstname.slice(1)}{" "}
+                {comment.lastname.charAt(0).toUpperCase() +
+                  comment.lastname.slice(1)}
               </p>
               <p className={style.paragraph}>{comment.content}</p>
             </article>
