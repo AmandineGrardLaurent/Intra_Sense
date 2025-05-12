@@ -21,7 +21,10 @@ export default function DecisionDetail({ id }: { id: string }) {
           <p className={style.creatorNameTitle}>
             Animée par{" "}
             <span className={style.creatorName}>
-              {decision.firstname} {decision.lastname}
+              {decision.firstname.charAt(0).toUpperCase() +
+                decision.firstname.slice(1)}{" "}
+              {decision.lastname.charAt(0).toUpperCase() +
+                decision.lastname.slice(1)}
             </span>
           </p>
           <h2 className={style.titleDate}>

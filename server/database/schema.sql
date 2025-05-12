@@ -103,8 +103,14 @@ INSERT INTO country (id,label) VALUES (1, 'France'), (2, 'Mexique'), (3, 'Canada
 
 INSERT INTO user (firstname,lastname,email,hash_password,avatar,country_id,role_id) 
 VALUES
-('Alice', 'Dupont', 'alice.dupont@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/26.jpg', 1, 2),
-('Bob', 'Martin', 'bob.martin@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/men/26.jpg', 2, 2),
-('Charlie', 'Durand', 'charlie.durand@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/23.jpg', 3, 1),
-('David', 'Lemoine', 'david.lemoine@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/men/26.jpg', 1, 1),
-('Emma', 'Morel', 'emma.morel@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/25.jpg', 2, 2);
+('laure', 'dinateur', 'alice@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/26.jpg', 1, 2),
+('eli', 'minet', 'bob@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/men/26.jpg', 2, 2),
+('rémi', 'fasol', 'charlie@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/men/23.jpg', 3, 1),
+('jean', 'peuplu', 'david@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/men/26.jpg', 1, 1),
+('milène', 'micoton', 'emmal@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/25.jpg', 2, 2),
+('sacha', 'touille', 'alice.dupont@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/98.jpg', 1, 2),
+('justin', 'ptipeu', 'bob.martin@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/men/3.jpg', 2, 2),
+('josé', 'paldir', 'charlie.durand@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/men/53.jpg', 3, 1),
+('paul', 'ochon', 'david.lemoine@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/men/96.jpg', 1, 1),
+('agathe', 'afeeling', 'emma.morel@example.com', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/5.jpg', 2, 2),
+('amandine', 'didine', 'amandine@a.fr', '$2y$10$abcdefghijklmnopqrstuv', 'https://randomuser.me/api/portraits/women/11.jpg', 2, 3);

@@ -61,7 +61,7 @@ const add: RequestHandler = async (req, res, next) => {
       country_id: Number.parseInt(req.body.country_id),
     };
 
-    const insertId = await userRepository.create(req.body);
+    const insertId = await userRepository.create(user);
 
     res.status(201).json({ insertId });
   } catch (error) {

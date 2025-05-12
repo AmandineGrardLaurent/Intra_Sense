@@ -207,10 +207,15 @@ function CreateDecisionForm() {
                 size={3}
                 {...register("user_expert_id", { required: true })}
               >
-                <option value="">Les experts</option>
+                <option value="" className={style.selectUser}>
+                  Les experts
+                </option>
                 {users.map((userExpert) => (
                   <option key={userExpert.id} value={userExpert.id}>
-                    {userExpert.firstname} {userExpert.lastname}
+                    {userExpert.firstname.charAt(0).toUpperCase() +
+                      userExpert.firstname.slice(1)}{" "}
+                    {userExpert.lastname.charAt(0).toUpperCase() +
+                      userExpert.lastname.slice(1)}
                   </option>
                 ))}
               </select>
@@ -226,10 +231,15 @@ function CreateDecisionForm() {
                 size={3}
                 {...register("user_impacted_id", { required: true })}
               >
-                <option value="">Les impactées</option>
+                <option value="" className={style.selectUser}>
+                  Les impactées
+                </option>
                 {users.map((userImpacted) => (
                   <option key={userImpacted.id} value={userImpacted.id}>
-                    {userImpacted.firstname} {userImpacted.lastname}
+                    {userImpacted.firstname.charAt(0).toUpperCase() +
+                      userImpacted.firstname.slice(1)}{" "}
+                    {userImpacted.lastname.charAt(0).toUpperCase() +
+                      userImpacted.lastname.slice(1)}
                   </option>
                 ))}
               </select>
@@ -245,10 +255,15 @@ function CreateDecisionForm() {
                 size={3}
                 {...register("user_animator_id", { required: true })}
               >
-                <option value="">Les animateurs</option>
+                <option value="" className={style.selectUser}>
+                  Les animateurs
+                </option>
                 {users.map((userAnimator) => (
                   <option key={userAnimator.id} value={userAnimator.id}>
-                    {userAnimator.firstname} {userAnimator.lastname}
+                    {userAnimator.firstname.charAt(0).toUpperCase() +
+                      userAnimator.firstname.slice(1)}{" "}
+                    {userAnimator.lastname.charAt(0).toUpperCase() +
+                      userAnimator.lastname.slice(1)}
                   </option>
                 ))}
               </select>

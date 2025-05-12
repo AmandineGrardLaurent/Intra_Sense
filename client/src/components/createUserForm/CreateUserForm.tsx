@@ -48,6 +48,11 @@ export default function CreateUserForm() {
         },
         body: JSON.stringify(transformedData),
       });
+      if (response.status === 422) {
+        toast.error("Email déjà utilisé");
+        return;
+      }
+
       await response.json();
       reset();
       toast.success("Demande envoyée à l'administrateur");
