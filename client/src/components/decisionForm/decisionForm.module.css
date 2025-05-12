@@ -107,6 +107,11 @@
   flex-direction: row;
 }
 
+.selectUser {
+  color: grey;
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 768px) {
   .decisionContainer {
     max-width: 800px;

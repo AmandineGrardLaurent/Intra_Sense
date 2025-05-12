@@ -27,7 +27,7 @@ type NewUserType = {
   email: string;
   hash_password: string;
   avatar: string;
-  country_id: string;
+  country_id: number;
 };
 
 // country

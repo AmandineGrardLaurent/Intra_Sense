@@ -3,7 +3,9 @@ import style from "./decisionCard.module.css";
 
 export default function DecisionCard({
   decision,
-}: { decision: DecisionDetailCard }) {
+}: {
+  decision: DecisionDetailCard;
+}) {
   return (
     <NavLink to={`/decisionslist/${decision.id}`}>
       <section className={style.card}>
@@ -22,7 +24,10 @@ export default function DecisionCard({
           <p className={style.userInfo}>
             par{" "}
             <span className={style.userName}>
-              {decision.firstname} {decision.lastname}
+              {decision.firstname.charAt(0).toUpperCase() +
+                decision.firstname.slice(1)}{" "}
+              {decision.lastname.charAt(0).toUpperCase() +
+                decision.lastname.slice(1)}
             </span>
           </p>
         </article>
