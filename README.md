@@ -1,3 +1,123 @@
+
+<div align="center">
+  <img src="client/public/logo.png" alt="Logo Intra_Sense">
+</div>
+
+# Intra_Sense - Plateforme de Gestion Collaborative de Prises de Décision
+
+## Table des Matières
+
+- [Intra_Sense - Plateforme de Gestion Collaborative de Prises de Décision](#intra_sense---plateforme-de-gestion-collaborative-de-prises-de-décision)
+  - [Table des Matières](#table-des-matières)
+  - [📝 Introduction](#-introduction)
+    - [Objectifs et enjeux](#objectifs-et-enjeux)
+  - [👥 Équipe de développement](#équipe-de-développement)
+  - [⚙️ Environnement technique](#-environnement-technique)
+    - [Outils et technologies utilisées](#outils-et-technologies-utilisées)
+  - [📦 Packages NPM](#-packages-npm)
+    - [Frontend](#frontend)
+    - [Backend](#backend)
+  - [🗄️ Modélisation de la base de données](#-modélisation-de-la-base-de-données)
+    - [Modèle Conceptuel de Données (MCD)](#modèle-conceptuel-de-données-mcd)
+    - [Modèle Logique de Données (MLD)](#modèle-logique-de-données-mld)
+    - [Modèle Physique de Données (MPD)](#modèle-physique-de-données-mpd)
+  - [🏗 Architecture du projet](#-architecture-du-projet)
+  - [🛠 Outils utilisés](#-outils-utilisés)
+
+## 📝 Introduction
+
+Dans le cadre de notre passage du titre professionnel Développeur Web et Web Mobile, nous avons développé Intra_Sense, une plateforme interne (intranet) conçue pour faciliter la prise de décision collaborative au sein de l’association MakeSense
+
+Ce projet répond à une double ambition :
+
+- **Favoriser la collaboration et la participation** des membres dispersés à travers le monde.
+- **Assurer une gouvernance participative et inclusive**, en centralisant et structurant les processus de décision.
+
+### Objectifs et enjeux
+
+✔️ Coordination efficace entre les membres  
+✔️ Transparence des échanges  
+✔️ Soumission et suivi des décisions  
+✔️ Participation active via un système de vote  
+✔️ Archivage et consultation des décisions passées
+
+En offrant un espace structuré pour l’**idéation, le débat, la validation et le suivi des décisions**, cette plateforme contribue à renforcer l’impact de **MakeSense** dans ses missions.
+
+## 👥 Équipe de développement
+
+- [Amandine Grard Laurent](https://github.com/AmandineGrardLaurent)
+- [Damien Baczkiewicz](https://github.com/DamBKZ)
+- [Aurélien Haye](https://github.com/Aurel1H)
+
+## ⚙️ Environnement technique
+
+### Outils et technologies utilisées
+
+**Maquettage**
+
+- Excalidraw : Wireframe
+- Figma : Maquette détaillée
+
+**Gestion de version et IDE**
+
+- Git : Gestion des versions
+- GitHub : Dépôt distant et gestion de projet
+- Visual Studio Code : Environnement de développement
+
+**Frontend**
+
+- HTML / CSS
+- JavaScript / TypeScript
+- React
+- Vite.js
+
+**Backend**
+
+- JavaScript / TypeScript
+- Express
+- MySQ
+
+## 📦 Packages NPM
+
+**Frontend**
+
+| Package                | Description                                          |
+| ---------------------- | ---------------------------------------------------- |
+| `npm`                  | Gestionnaire de packages Node.js                     |
+| `react`                | Framework JavaScript pour les interfaces utilisateur |
+| `react-dom`            | Intégration React avec le DOM                        |
+| `react-hook-form`      | Gestion simplifiée des formulaires                   |
+| `react-router-dom`     | Routage dynamique dans React                         |
+| `react-scroll`         | Personnalisation du scroll et accessibilité          |
+| `react-toastify`       | Notifications et alertes utilisateur                 |
+| `react-show-more-text` | Gestion des textes longs avec "voir plus"            |
+| `typescript`           | Typage statique pour améliorer la qualité du code    |
+| `vite`                 | Serveur de développement rapide et performant        |
+
+**Backend**
+
+| Package         | Description                                             |
+| --------------- | ------------------------------------------------------- |
+| `npm`           | Gestionnaire de packages Node.js                        |
+| `argon2`        | Hachage sécurisé des mots de passe                      |
+| `cookie-parser` | Middleware pour gérer les cookies HTTP                  |
+| `cors`          | Gestion du partage des ressources entre origines (CORS) |
+| `dotenv`        | Gestion des variables d’environnement                   |
+| `express`       | Framework web pour Node.js                              |
+| `joi`           | Validation des données                                  |
+| `jsonwebtoken`  | Authentification avec JWT                               |
+| `mysql2`        | Connexion et requêtes MySQL                             |
+| `typescript`    | Typage statique pour améliorer la qualité du code       |
+| `tsx`           | Gestion des fichiers TypeScript avec JSX                |
+
+## 🛠 Outils utilisés
+
+✅ Backlog : GitHub Projects  
+✅ Dépôt de code : GitHub  
+✅ Communication : Discord
+
+🚀 **Intra_Sense : Pour une prise de décision collaborative, transparente et efficace !** 🎯
+
 # mn_template-p3
 
 Ce projet est un monorepo JS, suivant l'architecture React-Express-MySQL telle qu'enseignée à la Wild Code School (v7.1.7) :
@@ -366,137 +486,3 @@ Nous accueillons avec plaisir les contributions ! Veuillez suivre ces étapes po
 - Ajoutez des tests pour toute nouvelle fonctionnalité ou correction de bug.
 - Documentez clairement vos modifications dans la description de la pull request.
 
----
-
-<div align="center">
-  <img src="client/public/logo.png" alt="Logo Intra_Sense">
-</div>
-
-# Intra_Sense - Plateforme de Gestion Collaborative de Prises de Décision
-
-## Table des Matières
-
-- [Intra_Sense - Plateforme de Gestion Collaborative de Prises de Décision](#intra_sense---plateforme-de-gestion-collaborative-de-prises-de-décision)
-  - [Table des Matières](#table-des-matières)
-  - [📝 Introduction](#-introduction)
-    - [Objectifs et enjeux](#objectifs-et-enjeux)
-  - [👥 Équipe de développement](#équipe-de-développement)
-  - [⚙️ Environnement technique](#-environnement-technique)
-    - [Outils et technologies utilisées](#outils-et-technologies-utilisées)
-  - [📦 Packages NPM](#-packages-npm)
-    - [Frontend](#frontend)
-    - [Backend](#backend)
-  - [🗄️ Modélisation de la base de données](#-modélisation-de-la-base-de-données)
-    - [Modèle Conceptuel de Données (MCD)](#modèle-conceptuel-de-données-mcd)
-    - [Modèle Logique de Données (MLD)](#modèle-logique-de-données-mld)
-    - [Modèle Physique de Données (MPD)](#modèle-physique-de-données-mpd)
-  - [🏗 Architecture du projet](#-architecture-du-projet)
-  - [🛠 Outils utilisés](#-outils-utilisés)
-
-## 📝 Introduction
-
-Dans le cadre de notre passage du titre professionnel Développeur Web et Web Mobile, nous avons développé Intra_Sense, une plateforme interne (intranet) conçue pour faciliter la prise de décision collaborative au sein de l’association MakeSense
-
-Ce projet répond à une double ambition :
-
-- **Favoriser la collaboration et la participation** des membres dispersés à travers le monde.
-- **Assurer une gouvernance participative et inclusive**, en centralisant et structurant les processus de décision.
-
-### Objectifs et enjeux
-
-✔️ Coordination efficace entre les membres  
-✔️ Transparence des échanges  
-✔️ Soumission et suivi des décisions  
-✔️ Participation active via un système de vote  
-✔️ Archivage et consultation des décisions passées
-
-En offrant un espace structuré pour l’**idéation, le débat, la validation et le suivi des décisions**, cette plateforme contribue à renforcer l’impact de **MakeSense** dans ses missions.
-
-## 👥 Équipe de développement
-
-- [Amandine Grard Laurent](https://github.com/AmandineGrardLaurent)
-- [Damien Baczkiewicz](https://github.com/DamBKZ)
-- [Aurélien Haye](https://github.com/Aurel1H)
-
-## ⚙️ Environnement technique
-
-### Outils et technologies utilisées
-
-**Maquettage**
-
-- Excalidraw : Wireframe
-- Figma : Maquette détaillée
-
-**Gestion de version et IDE**
-
-- Git : Gestion des versions
-- GitHub : Dépôt distant et gestion de projet
-- Visual Studio Code : Environnement de développement
-
-**Frontend**
-
-- HTML / CSS
-- JavaScript / TypeScript
-- React
-- Vite.js
-
-**Backend**
-
-- JavaScript / TypeScript
-- Express
-- MySQ
-
-## 📦 Packages NPM
-
-**Frontend**
-
-| Package                | Description                                          |
-| ---------------------- | ---------------------------------------------------- |
-| `npm`                  | Gestionnaire de packages Node.js                     |
-| `react`                | Framework JavaScript pour les interfaces utilisateur |
-| `react-dom`            | Intégration React avec le DOM                        |
-| `react-hook-form`      | Gestion simplifiée des formulaires                   |
-| `react-router-dom`     | Routage dynamique dans React                         |
-| `react-scroll`         | Personnalisation du scroll et accessibilité          |
-| `react-toastify`       | Notifications et alertes utilisateur                 |
-| `react-show-more-text` | Gestion des textes longs avec "voir plus"            |
-| `typescript`           | Typage statique pour améliorer la qualité du code    |
-| `vite`                 | Serveur de développement rapide et performant        |
-
-**Backend**
-
-| Package         | Description                                             |
-| --------------- | ------------------------------------------------------- |
-| `npm`           | Gestionnaire de packages Node.js                        |
-| `argon2`        | Hachage sécurisé des mots de passe                      |
-| `cookie-parser` | Middleware pour gérer les cookies HTTP                  |
-| `cors`          | Gestion du partage des ressources entre origines (CORS) |
-| `dotenv`        | Gestion des variables d’environnement                   |
-| `express`       | Framework web pour Node.js                              |
-| `joi`           | Validation des données                                  |
-| `jsonwebtoken`  | Authentification avec JWT                               |
-| `mysql2`        | Connexion et requêtes MySQL                             |
-| `typescript`    | Typage statique pour améliorer la qualité du code       |
-| `tsx`           | Gestion des fichiers TypeScript avec JSX                |
-
-## 🗄️ Modélisation de la base de données
-
-### Modèle Conceptuel de Données (MCD)
-
-![Modèle Conceptuel de Données (MCD)](client/public/MCD.png)
-
-### Modèle Logique de Données (MLD)
-
-![Modèle Logique de Données (MLD)](client/public/MLD.png)
-
-### Modèle Physique de Données (MPD)
-
-[Modèle Physique de Données (MPD)](client/public/MPD.png)
-
-## 🛠 Outils utilisés
-
-✅ Backlog : GitHub Projects  
-✅ Dépôt de code : GitHub  
-✅ Communication : Discord
-
-🚀 **Intra_Sense : Pour une prise de décision collaborative, transparente et efficace !** 🎯
